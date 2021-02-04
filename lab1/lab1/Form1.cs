@@ -136,5 +136,10 @@ namespace lab1
             flag = true;
             textBox1.Text = result.ToString();
         }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (!textBox1.Text.Contains(",")) textBox1.Text += ",";
+        }
     }
 }

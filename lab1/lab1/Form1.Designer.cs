@@ -248,7 +248,7 @@
             this.button18.Text = ",";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.UseWaitCursor = true;
-            this.button18.Click += new System.EventHandler(this.button17_Click);
+            this.button18.Click += new System.EventHandler(this.button20_Click);
             // 
             // button19
             // 
