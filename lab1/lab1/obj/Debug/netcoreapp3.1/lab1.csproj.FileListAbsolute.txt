@@ -1,0 +1,15 @@
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.exe
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.deps.json
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.json
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.dev.json
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.dll
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\bin\Debug\netcoreapp3.1\lab1.pdb
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.csprojAssemblyReference.cache
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.Form1.resources
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.csproj.GenerateResource.cache
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.AssemblyInfoInputs.cache
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.AssemblyInfo.cs
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.csproj.CoreCompileInputs.cache
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.dll
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.pdb
+F:\GitHub\OOP-2021Q1-2\lab1\lab1\obj\Debug\netcoreapp3.1\lab1.genruntimeconfig.cache
