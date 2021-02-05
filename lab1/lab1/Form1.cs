@@ -88,6 +88,11 @@ namespace lab1
             tempStr = btn.Text;
             flag = true;
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (textBox1.Text != "0") textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) * -1);
+        }
 
         private void button19_Click(object sender, EventArgs e)
         {
@@ -121,12 +126,12 @@ namespace lab1
                         result = dNumber1 % dNumber2;
                         break;
                     }
-                case "+/-":
+                case "//":
                     {
                         result = Math.Floor(dNumber1 / dNumber2);
                         break;
                     }
-                    
+
                 default:
                     {
                         break;
