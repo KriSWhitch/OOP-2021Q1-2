@@ -126,6 +126,12 @@ namespace lab2
 
         }
 
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (textBox.Text.Length == 0) textBox.BackColor = Color.Red;
+            else textBox.BackColor = Color.White;
+        }
     }
 
     public class Lector

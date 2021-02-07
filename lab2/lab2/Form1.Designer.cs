@@ -62,10 +62,12 @@
             // 
             // DisciplineName
             // 
+            this.DisciplineName.BackColor = System.Drawing.Color.Red;
             this.DisciplineName.Location = new System.Drawing.Point(12, 32);
             this.DisciplineName.Name = "DisciplineName";
             this.DisciplineName.Size = new System.Drawing.Size(136, 23);
             this.DisciplineName.TabIndex = 0;
+            this.DisciplineName.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label1
             // 
@@ -146,17 +148,21 @@
             // 
             // NumberOfLectures
             // 
+            this.NumberOfLectures.BackColor = System.Drawing.Color.Red;
             this.NumberOfLectures.Location = new System.Drawing.Point(12, 349);
             this.NumberOfLectures.Name = "NumberOfLectures";
             this.NumberOfLectures.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLectures.TabIndex = 0;
+            this.NumberOfLectures.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // NumberOfLabratoryExercises
             // 
+            this.NumberOfLabratoryExercises.BackColor = System.Drawing.Color.Red;
             this.NumberOfLabratoryExercises.Location = new System.Drawing.Point(12, 416);
             this.NumberOfLabratoryExercises.Name = "NumberOfLabratoryExercises";
             this.NumberOfLabratoryExercises.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLabratoryExercises.TabIndex = 0;
+            this.NumberOfLabratoryExercises.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label7
             // 
@@ -222,17 +228,21 @@
             // 
             // LectorsFullname
             // 
+            this.LectorsFullname.BackColor = System.Drawing.Color.Red;
             this.LectorsFullname.Location = new System.Drawing.Point(85, 477);
             this.LectorsFullname.Name = "LectorsFullname";
             this.LectorsFullname.Size = new System.Drawing.Size(136, 23);
             this.LectorsFullname.TabIndex = 0;
+            this.LectorsFullname.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // LectorsDepartment
             // 
+            this.LectorsDepartment.BackColor = System.Drawing.Color.Red;
             this.LectorsDepartment.Location = new System.Drawing.Point(85, 508);
             this.LectorsDepartment.Name = "LectorsDepartment";
             this.LectorsDepartment.Size = new System.Drawing.Size(136, 23);
             this.LectorsDepartment.TabIndex = 0;
+            this.LectorsDepartment.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // label11
             // 
@@ -246,10 +256,12 @@
             // 
             // LectorsAuditory
             // 
+            this.LectorsAuditory.BackColor = System.Drawing.Color.Red;
             this.LectorsAuditory.Location = new System.Drawing.Point(85, 541);
             this.LectorsAuditory.Name = "LectorsAuditory";
             this.LectorsAuditory.Size = new System.Drawing.Size(136, 23);
             this.LectorsAuditory.TabIndex = 0;
+            this.LectorsAuditory.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // DisplayArea
             // 
