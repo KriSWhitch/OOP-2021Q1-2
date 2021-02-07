@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DisciplineForSerialize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Lector>
+    <fullname>Муковозчик Алексей Витальевич</fullname>
+    <department>Физика</department>
+    <auditory>224-4</auditory>
+  </Lector>
+  <Discipline>
+    <disciplineName>Физика</disciplineName>
+    <semestr>1 семестр</semestr>
+    <cours>1 курс</cours>
+    <speciality>ПОИБМС</speciality>
+    <numberOfLectures>18</numberOfLectures>
+    <numberOfLabratoryExercises>12</numberOfLabratoryExercises>
+    <typeOfControl>Экзамен</typeOfControl>
+  </Discipline>
+</DisciplineForSerialize>
