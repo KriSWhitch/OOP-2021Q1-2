@@ -49,20 +49,24 @@
             this.LectorsDepartment = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.LectorsAuditory = new System.Windows.Forms.TextBox();
-            this.DisplayArea = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.TypeOfControlPanel = new System.Windows.Forms.Panel();
             this.SecondSemestrRadioBtn = new System.Windows.Forms.RadioButton();
             this.FirstSemestrRadioBtn = new System.Windows.Forms.RadioButton();
             this.SemestrPanel = new System.Windows.Forms.Panel();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.Menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.DisplayArea = new System.Windows.Forms.TextBox();
             this.TypeOfControlPanel.SuspendLayout();
             this.SemestrPanel.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // DisciplineName
             // 
-            this.DisciplineName.Location = new System.Drawing.Point(12, 32);
+            this.DisciplineName.Location = new System.Drawing.Point(12, 68);
             this.DisciplineName.Name = "DisciplineName";
             this.DisciplineName.Size = new System.Drawing.Size(136, 23);
             this.DisciplineName.TabIndex = 0;
@@ -70,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 1;
@@ -79,7 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 68);
+            this.label2.Location = new System.Drawing.Point(12, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 1;
@@ -89,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 126);
+            this.label3.Location = new System.Drawing.Point(13, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 1;
@@ -100,7 +104,7 @@
             // 
             this.DisciplineCours.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DisciplineCours.FormattingEnabled = true;
-            this.DisciplineCours.Location = new System.Drawing.Point(12, 150);
+            this.DisciplineCours.Location = new System.Drawing.Point(12, 186);
             this.DisciplineCours.Name = "DisciplineCours";
             this.DisciplineCours.Size = new System.Drawing.Size(136, 23);
             this.DisciplineCours.TabIndex = 2;
@@ -109,7 +113,7 @@
             // 
             this.DisciplineSpeciality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DisciplineSpeciality.FormattingEnabled = true;
-            this.DisciplineSpeciality.Location = new System.Drawing.Point(12, 212);
+            this.DisciplineSpeciality.Location = new System.Drawing.Point(12, 248);
             this.DisciplineSpeciality.Name = "DisciplineSpeciality";
             this.DisciplineSpeciality.Size = new System.Drawing.Size(136, 23);
             this.DisciplineSpeciality.TabIndex = 2;
@@ -117,7 +121,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 185);
+            this.label4.Location = new System.Drawing.Point(12, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 15);
             this.label4.TabIndex = 1;
@@ -127,7 +131,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 252);
+            this.label5.Location = new System.Drawing.Point(12, 288);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 15);
             this.label5.TabIndex = 1;
@@ -137,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 320);
+            this.label6.Location = new System.Drawing.Point(12, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 15);
             this.label6.TabIndex = 1;
@@ -146,14 +150,14 @@
             // 
             // NumberOfLectures
             // 
-            this.NumberOfLectures.Location = new System.Drawing.Point(12, 349);
+            this.NumberOfLectures.Location = new System.Drawing.Point(12, 385);
             this.NumberOfLectures.Name = "NumberOfLectures";
             this.NumberOfLectures.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLectures.TabIndex = 0;
             // 
             // NumberOfLabratoryExercises
             // 
-            this.NumberOfLabratoryExercises.Location = new System.Drawing.Point(12, 416);
+            this.NumberOfLabratoryExercises.Location = new System.Drawing.Point(12, 452);
             this.NumberOfLabratoryExercises.Name = "NumberOfLabratoryExercises";
             this.NumberOfLabratoryExercises.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLabratoryExercises.TabIndex = 0;
@@ -161,7 +165,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 389);
+            this.label7.Location = new System.Drawing.Point(12, 425);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 15);
             this.label7.TabIndex = 1;
@@ -194,7 +198,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 452);
+            this.label8.Location = new System.Drawing.Point(12, 488);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 15);
             this.label8.TabIndex = 1;
@@ -203,7 +207,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 480);
+            this.label9.Location = new System.Drawing.Point(13, 516);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 15);
             this.label9.TabIndex = 1;
@@ -213,7 +217,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 511);
+            this.label10.Location = new System.Drawing.Point(12, 547);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 15);
             this.label10.TabIndex = 1;
@@ -222,14 +226,14 @@
             // 
             // LectorsFullname
             // 
-            this.LectorsFullname.Location = new System.Drawing.Point(85, 477);
+            this.LectorsFullname.Location = new System.Drawing.Point(85, 513);
             this.LectorsFullname.Name = "LectorsFullname";
             this.LectorsFullname.Size = new System.Drawing.Size(136, 23);
             this.LectorsFullname.TabIndex = 0;
             // 
             // LectorsDepartment
             // 
-            this.LectorsDepartment.Location = new System.Drawing.Point(85, 508);
+            this.LectorsDepartment.Location = new System.Drawing.Point(85, 544);
             this.LectorsDepartment.Name = "LectorsDepartment";
             this.LectorsDepartment.Size = new System.Drawing.Size(136, 23);
             this.LectorsDepartment.TabIndex = 0;
@@ -237,7 +241,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 544);
+            this.label11.Location = new System.Drawing.Point(13, 580);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 15);
             this.label11.TabIndex = 1;
@@ -246,22 +250,14 @@
             // 
             // LectorsAuditory
             // 
-            this.LectorsAuditory.Location = new System.Drawing.Point(85, 541);
+            this.LectorsAuditory.Location = new System.Drawing.Point(85, 577);
             this.LectorsAuditory.Name = "LectorsAuditory";
             this.LectorsAuditory.Size = new System.Drawing.Size(136, 23);
             this.LectorsAuditory.TabIndex = 0;
             // 
-            // DisplayArea
-            // 
-            this.DisplayArea.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DisplayArea.Location = new System.Drawing.Point(288, 150);
-            this.DisplayArea.Name = "DisplayArea";
-            this.DisplayArea.Size = new System.Drawing.Size(457, 414);
-            this.DisplayArea.TabIndex = 4;
-            // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(288, 19);
+            this.SaveBtn.Location = new System.Drawing.Point(288, 55);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(457, 46);
             this.SaveBtn.TabIndex = 5;
@@ -271,7 +267,7 @@
             // 
             // LoadBtn
             // 
-            this.LoadBtn.Location = new System.Drawing.Point(288, 76);
+            this.LoadBtn.Location = new System.Drawing.Point(288, 112);
             this.LoadBtn.Name = "LoadBtn";
             this.LoadBtn.Size = new System.Drawing.Size(457, 46);
             this.LoadBtn.TabIndex = 5;
@@ -283,7 +279,7 @@
             // 
             this.TypeOfControlPanel.Controls.Add(this.ExamRadioBtn);
             this.TypeOfControlPanel.Controls.Add(this.OffsetRadioBtn);
-            this.TypeOfControlPanel.Location = new System.Drawing.Point(13, 271);
+            this.TypeOfControlPanel.Location = new System.Drawing.Point(13, 307);
             this.TypeOfControlPanel.Name = "TypeOfControlPanel";
             this.TypeOfControlPanel.Size = new System.Drawing.Size(136, 46);
             this.TypeOfControlPanel.TabIndex = 6;
@@ -314,21 +310,58 @@
             // 
             this.SemestrPanel.Controls.Add(this.SecondSemestrRadioBtn);
             this.SemestrPanel.Controls.Add(this.FirstSemestrRadioBtn);
-            this.SemestrPanel.Location = new System.Drawing.Point(13, 87);
+            this.SemestrPanel.Location = new System.Drawing.Point(13, 123);
             this.SemestrPanel.Name = "SemestrPanel";
             this.SemestrPanel.Size = new System.Drawing.Size(180, 36);
             this.SemestrPanel.TabIndex = 6;
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Menu});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(778, 24);
+            this.MenuStrip.TabIndex = 7;
+            this.MenuStrip.Text = "MenuStrip";
+            this.MenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Menu_ItemClicked);
+            // 
+            // Menu
+            // 
+            this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuSearch});
+            this.Menu.Name = "Menu";
+            this.Menu.Size = new System.Drawing.Size(53, 20);
+            this.Menu.Text = "Меню";
+            // 
+            // MenuSearch
+            // 
+            this.MenuSearch.Name = "MenuSearch";
+            this.MenuSearch.Size = new System.Drawing.Size(109, 22);
+            this.MenuSearch.Text = "Поиск";
+            this.MenuSearch.Click += new System.EventHandler(this.MenuSearch_Click);
+            // 
+            // DisplayArea
+            // 
+            this.DisplayArea.BackColor = System.Drawing.Color.White;
+            this.DisplayArea.Location = new System.Drawing.Point(288, 186);
+            this.DisplayArea.Multiline = true;
+            this.DisplayArea.Name = "DisplayArea";
+            this.DisplayArea.ReadOnly = true;
+            this.DisplayArea.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DisplayArea.Size = new System.Drawing.Size(457, 414);
+            this.DisplayArea.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 597);
+            this.ClientSize = new System.Drawing.Size(778, 623);
+            this.Controls.Add(this.DisplayArea);
             this.Controls.Add(this.SemestrPanel);
             this.Controls.Add(this.TypeOfControlPanel);
             this.Controls.Add(this.LoadBtn);
             this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.DisplayArea);
             this.Controls.Add(this.LectorsAuditory);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.LectorsDepartment);
@@ -348,7 +381,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DisciplineName);
+            this.Controls.Add(this.MenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MainMenuStrip = this.MenuStrip;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Дисциплина";
@@ -357,6 +392,8 @@
             this.TypeOfControlPanel.PerformLayout();
             this.SemestrPanel.ResumeLayout(false);
             this.SemestrPanel.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +420,6 @@
         private System.Windows.Forms.TextBox LectorsFullname;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox LectorsAuditory;
-        private System.Windows.Forms.Label DisplayArea;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.Panel TypeOfControlPanel;
@@ -392,6 +428,11 @@
         private System.Windows.Forms.Panel SemestrPanel;
         private System.Windows.Forms.TextBox LectorsDepartment;
         private System.Windows.Forms.RadioButton ExamRadioBtn;
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem Menu;
+        private System.Windows.Forms.ToolStripMenuItem MenuSearch;
+        private System.Windows.Forms.TextBox Display;
+        private System.Windows.Forms.TextBox DisplayArea;
     }
 }
 

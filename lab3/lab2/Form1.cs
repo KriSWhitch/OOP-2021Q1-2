@@ -78,13 +78,9 @@ namespace lab2
                 {
                     if (rb.Checked) discipline.typeOfControl = rb.Text;
                 }
-                DisciplineForSerialize serializeMe = new DisciplineForSerialize(lector, discipline);
-                XmlSerializer xmlf = new XmlSerializer(serializeMe.GetType());
 
-                using (FileStream fs = new FileStream("data.xml", FileMode.OpenOrCreate))
-                {
-                    xmlf.Serialize(fs, serializeMe);
-                }
+                Serialize(lector, discipline);
+
             }
             else
             {
@@ -102,30 +98,64 @@ namespace lab2
 
         private void BtnLoad_Click(object sender, EventArgs e)
         {
-            DisciplineForSerialize deserializeMe = new DisciplineForSerialize();
-
-            XmlSerializer xmlf = new XmlSerializer(deserializeMe.GetType());
-
-            using (FileStream fs = new FileStream("data.xml", FileMode.OpenOrCreate))
+            List<DisciplineForSerialize> disciplinesForSerialize = Deserialize();
+            DisplayArea.Text = "";
+            foreach (DisciplineForSerialize discipline in disciplinesForSerialize)
             {
-                deserializeMe = (DisciplineForSerialize)xmlf.Deserialize(fs);
+                DisplayArea.Text += $"" +
+                $"Название дисциплины: {discipline.Discipline.disciplineName} \r\n" +
+                $"Cеместр: {discipline.Discipline.semestr} \r\n" +
+                $"Курс: {discipline.Discipline.cours} \r\n" +
+                $"Специальность: {discipline.Discipline.speciality} \r\n" +
+                $"Вид Контроля: {discipline.Discipline.typeOfControl} \r\n" +
+                $"Количество лекций: {discipline.Discipline.numberOfLectures} \r\n" +
+                $"Количество лабораторных: {discipline.Discipline.numberOfLabratoryExercises} \r\n" +
+                $"Лектор: \r\n" +
+                $"ФИО: {discipline.Lector.fullname} \r\n" +
+                $"Кафедра: {discipline.Lector.department} \r\n" +
+                $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
             }
-
-            DisplayArea.Text = $"" +
-                $"Название дисциплины: {deserializeMe.Discipline.disciplineName} \n" +
-                $"Cеместр: {deserializeMe.Discipline.semestr} \n" +
-                $"Курс: {deserializeMe.Discipline.cours} \n" +
-                $"Специальность: {deserializeMe.Discipline.speciality} \n" +
-                $"Вид Контроля: {deserializeMe.Discipline.typeOfControl} \n" +
-                $"Количество лекций: {deserializeMe.Discipline.numberOfLectures} \n" +
-                $"Количество лабораторных: {deserializeMe.Discipline.numberOfLabratoryExercises} \n" +
-                $"Лектор: \n" +
-                $"ФИО: {deserializeMe.Lector.fullname} \n" +
-                $"Кафедра: {deserializeMe.Lector.department} \n" +
-                $"Аудитория: {deserializeMe.Lector.auditory} \n";
 
         }
 
+        public void Serialize(Lector lector, Discipline discipline)
+        {
+            DisciplineForSerialize serializeMe = new DisciplineForSerialize(lector, discipline);
+            List<DisciplineForSerialize> disciplinesForSerialize;
+            if (File.Exists("data.xml")) disciplinesForSerialize = Deserialize();
+            else disciplinesForSerialize = new List<DisciplineForSerialize>();
+            disciplinesForSerialize.Add(serializeMe);
+            XmlSerializer xmlf = new XmlSerializer(disciplinesForSerialize.GetType());
+
+            using (FileStream fs = new FileStream("data.xml", FileMode.OpenOrCreate))
+            {
+                xmlf.Serialize(fs, disciplinesForSerialize);
+            }
+        }
+
+        public List<DisciplineForSerialize> Deserialize()
+        {
+            List<DisciplineForSerialize> disciplinesForSerialize = new List<DisciplineForSerialize>();
+
+            XmlSerializer xmlf = new XmlSerializer(disciplinesForSerialize.GetType());
+
+            using (FileStream fs = new FileStream("data.xml", FileMode.OpenOrCreate))
+            {
+                disciplinesForSerialize = (List<DisciplineForSerialize>)xmlf.Deserialize(fs);
+            }
+
+            return disciplinesForSerialize;
+        }
+
+        private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MenuSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Lector

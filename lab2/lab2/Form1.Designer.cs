@@ -49,13 +49,13 @@
             this.LectorsDepartment = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.LectorsAuditory = new System.Windows.Forms.TextBox();
-            this.DisplayArea = new System.Windows.Forms.Label();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.TypeOfControlPanel = new System.Windows.Forms.Panel();
             this.SecondSemestrRadioBtn = new System.Windows.Forms.RadioButton();
             this.FirstSemestrRadioBtn = new System.Windows.Forms.RadioButton();
             this.SemestrPanel = new System.Windows.Forms.Panel();
+            this.DisplayArea = new System.Windows.Forms.TextBox();
             this.TypeOfControlPanel.SuspendLayout();
             this.SemestrPanel.SuspendLayout();
             this.SuspendLayout();
@@ -263,14 +263,6 @@
             this.LectorsAuditory.TabIndex = 0;
             this.LectorsAuditory.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
-            // DisplayArea
-            // 
-            this.DisplayArea.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DisplayArea.Location = new System.Drawing.Point(288, 150);
-            this.DisplayArea.Name = "DisplayArea";
-            this.DisplayArea.Size = new System.Drawing.Size(457, 414);
-            this.DisplayArea.TabIndex = 4;
-            // 
             // SaveBtn
             // 
             this.SaveBtn.Location = new System.Drawing.Point(288, 19);
@@ -331,16 +323,27 @@
             this.SemestrPanel.Size = new System.Drawing.Size(180, 36);
             this.SemestrPanel.TabIndex = 6;
             // 
+            // DisplayArea
+            // 
+            this.DisplayArea.BackColor = System.Drawing.Color.White;
+            this.DisplayArea.Location = new System.Drawing.Point(288, 150);
+            this.DisplayArea.Multiline = true;
+            this.DisplayArea.Name = "DisplayArea";
+            this.DisplayArea.ReadOnly = true;
+            this.DisplayArea.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DisplayArea.Size = new System.Drawing.Size(457, 414);
+            this.DisplayArea.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 597);
+            this.Controls.Add(this.DisplayArea);
             this.Controls.Add(this.SemestrPanel);
             this.Controls.Add(this.TypeOfControlPanel);
             this.Controls.Add(this.LoadBtn);
             this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.DisplayArea);
             this.Controls.Add(this.LectorsAuditory);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.LectorsDepartment);
@@ -395,7 +398,6 @@
         private System.Windows.Forms.TextBox LectorsFullname;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox LectorsAuditory;
-        private System.Windows.Forms.Label DisplayArea;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.Panel TypeOfControlPanel;
@@ -404,6 +406,7 @@
         private System.Windows.Forms.Panel SemestrPanel;
         private System.Windows.Forms.TextBox LectorsDepartment;
         private System.Windows.Forms.RadioButton ExamRadioBtn;
+        private System.Windows.Forms.TextBox DisplayArea;
     }
 }
 
