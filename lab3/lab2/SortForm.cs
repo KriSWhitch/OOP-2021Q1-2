@@ -32,6 +32,7 @@ namespace lab2
             {
                 var linqSort = from discipline in mainForm.tempDisciplines orderby discipline.Discipline.numberOfLectures select discipline;
                 foreach (var discipline in linqSort) outputList.Add(discipline);
+                mainForm.resultDisciplines = outputList;
                 mainForm.DisplayArea.Text = "";
                 foreach (DisciplineForSerialize discipline in outputList)
                 {
@@ -48,6 +49,7 @@ namespace lab2
                     $"Кафедра: {discipline.Lector.department} \r\n" +
                     $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
                 }
+                mainForm.lastAction = "Сортировка";
                 this.Close();
             }
 
@@ -61,6 +63,7 @@ namespace lab2
             {
                 var linqSort = from discipline in mainForm.tempDisciplines orderby discipline.Discipline.typeOfControl select discipline;
                 foreach (var discipline in linqSort) outputList.Add(discipline);
+                mainForm.resultDisciplines = outputList;
                 mainForm.DisplayArea.Text = "";
                 foreach (DisciplineForSerialize discipline in outputList)
                 {
@@ -77,6 +80,7 @@ namespace lab2
                     $"Кафедра: {discipline.Lector.department} \r\n" +
                     $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
                 }
+                mainForm.lastAction = "Сортировка";
                 this.Close();
 
             }

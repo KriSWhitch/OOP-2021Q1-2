@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.DisciplineName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,10 +60,27 @@
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSort = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.DisplayArea = new System.Windows.Forms.TextBox();
+            this.Tools = new System.Windows.Forms.ToolStrip();
+            this.SearchTool = new System.Windows.Forms.ToolStripButton();
+            this.SortTool = new System.Windows.Forms.ToolStripButton();
+            this.ClearTool = new System.Windows.Forms.ToolStripButton();
+            this.DeleteTool = new System.Windows.Forms.ToolStripButton();
+            this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.InfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DateLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.TimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DisciplinesInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.DisciplinesInMemory = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LastActionInfoLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LastAction = new System.Windows.Forms.ToolStripStatusLabel();
             this.TypeOfControlPanel.SuspendLayout();
             this.SemestrPanel.SuspendLayout();
             this.MenuStrip.SuspendLayout();
+            this.Tools.SuspendLayout();
+            this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // DisciplineName
@@ -155,6 +173,7 @@
             this.NumberOfLectures.Name = "NumberOfLectures";
             this.NumberOfLectures.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLectures.TabIndex = 0;
+            this.NumberOfLectures.TextChanged += new System.EventHandler(this.Error_Checker);
             // 
             // NumberOfLabratoryExercises
             // 
@@ -162,6 +181,7 @@
             this.NumberOfLabratoryExercises.Name = "NumberOfLabratoryExercises";
             this.NumberOfLabratoryExercises.Size = new System.Drawing.Size(136, 23);
             this.NumberOfLabratoryExercises.TabIndex = 0;
+            this.NumberOfLabratoryExercises.TextChanged += new System.EventHandler(this.Error_Checker);
             // 
             // label7
             // 
@@ -331,7 +351,9 @@
             // 
             this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuSearch,
-            this.MenuSort});
+            this.MenuSort,
+            this.MenuSave,
+            this.MenuAbout});
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(53, 20);
             this.Menu.Text = "Меню";
@@ -339,16 +361,30 @@
             // MenuSearch
             // 
             this.MenuSearch.Name = "MenuSearch";
-            this.MenuSearch.Size = new System.Drawing.Size(140, 22);
+            this.MenuSearch.Size = new System.Drawing.Size(149, 22);
             this.MenuSearch.Text = "Поиск";
             this.MenuSearch.Click += new System.EventHandler(this.MenuSearch_Click);
             // 
             // MenuSort
             // 
             this.MenuSort.Name = "MenuSort";
-            this.MenuSort.Size = new System.Drawing.Size(140, 22);
+            this.MenuSort.Size = new System.Drawing.Size(149, 22);
             this.MenuSort.Text = "Сортировка";
             this.MenuSort.Click += new System.EventHandler(this.MenuSort_Click);
+            // 
+            // MenuSave
+            // 
+            this.MenuSave.Name = "MenuSave";
+            this.MenuSave.Size = new System.Drawing.Size(149, 22);
+            this.MenuSave.Text = "Сохранить";
+            this.MenuSave.Click += new System.EventHandler(this.MenuSave_Click);
+            // 
+            // MenuAbout
+            // 
+            this.MenuAbout.Name = "MenuAbout";
+            this.MenuAbout.Size = new System.Drawing.Size(149, 22);
+            this.MenuAbout.Text = "О программе";
+            this.MenuAbout.Click += new System.EventHandler(this.MenuAbout_Click);
             // 
             // DisplayArea
             // 
@@ -361,11 +397,119 @@
             this.DisplayArea.Size = new System.Drawing.Size(457, 414);
             this.DisplayArea.TabIndex = 8;
             // 
+            // Tools
+            // 
+            this.Tools.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Tools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SearchTool,
+            this.SortTool,
+            this.ClearTool,
+            this.DeleteTool});
+            this.Tools.Location = new System.Drawing.Point(754, 24);
+            this.Tools.Name = "Tools";
+            this.Tools.Size = new System.Drawing.Size(24, 620);
+            this.Tools.TabIndex = 9;
+            // 
+            // SearchTool
+            // 
+            this.SearchTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SearchTool.Image = ((System.Drawing.Image)(resources.GetObject("SearchTool.Image")));
+            this.SearchTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SearchTool.Name = "SearchTool";
+            this.SearchTool.Size = new System.Drawing.Size(21, 20);
+            this.SearchTool.Text = "Поиск";
+            this.SearchTool.Click += new System.EventHandler(this.MenuSearch_Click);
+            // 
+            // SortTool
+            // 
+            this.SortTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SortTool.Image = ((System.Drawing.Image)(resources.GetObject("SortTool.Image")));
+            this.SortTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SortTool.Name = "SortTool";
+            this.SortTool.Size = new System.Drawing.Size(21, 20);
+            this.SortTool.Text = "Сортировка";
+            this.SortTool.Click += new System.EventHandler(this.MenuSort_Click);
+            // 
+            // ClearTool
+            // 
+            this.ClearTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ClearTool.Image = ((System.Drawing.Image)(resources.GetObject("ClearTool.Image")));
+            this.ClearTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ClearTool.Name = "ClearTool";
+            this.ClearTool.Size = new System.Drawing.Size(21, 20);
+            this.ClearTool.Text = "Очистить дисплей";
+            this.ClearTool.Click += new System.EventHandler(this.ClearTool_Click);
+            // 
+            // DeleteTool
+            // 
+            this.DeleteTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.DeleteTool.Image = ((System.Drawing.Image)(resources.GetObject("DeleteTool.Image")));
+            this.DeleteTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteTool.Name = "DeleteTool";
+            this.DeleteTool.Size = new System.Drawing.Size(21, 20);
+            this.DeleteTool.Text = "Удалить данные из памяти";
+            this.DeleteTool.Click += new System.EventHandler(this.DeleteTool_Click);
+            // 
+            // StatusStrip
+            // 
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.InfoLabel,
+            this.DateLabel,
+            this.TimeLabel,
+            this.DisciplinesInfoLabel,
+            this.DisciplinesInMemory,
+            this.LastActionInfoLabel,
+            this.LastAction});
+            this.StatusStrip.Location = new System.Drawing.Point(0, 622);
+            this.StatusStrip.Name = "StatusStrip";
+            this.StatusStrip.Size = new System.Drawing.Size(754, 22);
+            this.StatusStrip.TabIndex = 10;
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(131, 17);
+            this.InfoLabel.Text = "Текущие дата и время:";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // DisciplinesInfoLabel
+            // 
+            this.DisciplinesInfoLabel.Name = "DisciplinesInfoLabel";
+            this.DisciplinesInfoLabel.Size = new System.Drawing.Size(125, 17);
+            this.DisciplinesInfoLabel.Text = "Дисциплин в памяти:";
+            // 
+            // DisciplinesInMemory
+            // 
+            this.DisciplinesInMemory.Name = "DisciplinesInMemory";
+            this.DisciplinesInMemory.Size = new System.Drawing.Size(0, 17);
+            // 
+            // LastActionInfoLabel
+            // 
+            this.LastActionInfoLabel.Name = "LastActionInfoLabel";
+            this.LastActionInfoLabel.Size = new System.Drawing.Size(122, 17);
+            this.LastActionInfoLabel.Text = "Последнее действие:";
+            // 
+            // LastAction
+            // 
+            this.LastAction.Name = "LastAction";
+            this.LastAction.Size = new System.Drawing.Size(0, 17);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 623);
+            this.ClientSize = new System.Drawing.Size(778, 644);
+            this.Controls.Add(this.StatusStrip);
+            this.Controls.Add(this.Tools);
             this.Controls.Add(this.DisplayArea);
             this.Controls.Add(this.SemestrPanel);
             this.Controls.Add(this.TypeOfControlPanel);
@@ -403,6 +547,10 @@
             this.SemestrPanel.PerformLayout();
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
+            this.Tools.ResumeLayout(false);
+            this.Tools.PerformLayout();
+            this.StatusStrip.ResumeLayout(false);
+            this.StatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,6 +590,21 @@
         private System.Windows.Forms.ToolStripMenuItem MenuSearch;
         internal System.Windows.Forms.TextBox DisplayArea;
         private System.Windows.Forms.ToolStripMenuItem MenuSort;
+        private System.Windows.Forms.ToolStripMenuItem MenuSave;
+        private System.Windows.Forms.ToolStripMenuItem MenuAbout;
+        private System.Windows.Forms.ToolStrip Tools;
+        private System.Windows.Forms.ToolStripButton SearchTool;
+        private System.Windows.Forms.ToolStripButton SortTool;
+        private System.Windows.Forms.ToolStripButton ClearTool;
+        private System.Windows.Forms.ToolStripButton DeleteTool;
+        private System.Windows.Forms.StatusStrip StatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel InfoLabel;
+        private System.Windows.Forms.ToolStripStatusLabel DateLabel;
+        private System.Windows.Forms.ToolStripStatusLabel TimeLabel;
+        private System.Windows.Forms.ToolStripStatusLabel DisciplinesInfoLabel;
+        private System.Windows.Forms.ToolStripStatusLabel DisciplinesInMemory;
+        private System.Windows.Forms.ToolStripStatusLabel LastActionInfoLabel;
+        private System.Windows.Forms.ToolStripStatusLabel LastAction;
     }
 }
 

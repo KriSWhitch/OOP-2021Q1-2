@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Text;
@@ -43,6 +44,7 @@ namespace lab2
                 }
                 else
                 {
+                    mainForm.resultDisciplines = outputList;
                     mainForm.DisplayArea.Text = "";
                     foreach (DisciplineForSerialize discipline in outputList)
                     {
@@ -59,6 +61,7 @@ namespace lab2
                         $"Кафедра: {discipline.Lector.department} \r\n" +
                         $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
                     }
+                    mainForm.lastAction = "Поиск";
                     this.Close();
                 }
 
@@ -73,7 +76,6 @@ namespace lab2
             {
                 InputInSearch inputInSearch = new InputInSearch(this);
                 inputInSearch.ShowDialog();
-
                 Regex regex = new Regex(@$"{textFromInputInSearch}(\w*)", RegexOptions.IgnoreCase);
                 foreach (var discipline in mainForm.tempDisciplines)
                 {
@@ -87,6 +89,7 @@ namespace lab2
                 } 
                 else
                 {
+                    mainForm.resultDisciplines = outputList;
                     mainForm.DisplayArea.Text = "";
                     foreach (DisciplineForSerialize discipline in outputList)
                     {
@@ -103,6 +106,7 @@ namespace lab2
                         $"Кафедра: {discipline.Lector.department} \r\n" +
                         $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
                     }
+                    mainForm.lastAction = "Поиск";
                     this.Close();
                 }
 
@@ -131,6 +135,7 @@ namespace lab2
                 }
                 else
                 {
+                    mainForm.resultDisciplines = outputList;
                     mainForm.DisplayArea.Text = "";
                     foreach (DisciplineForSerialize discipline in outputList)
                     {
@@ -147,6 +152,7 @@ namespace lab2
                         $"Кафедра: {discipline.Lector.department} \r\n" +
                         $"Аудитория: {discipline.Lector.auditory} \r\n \r\n \r\n";
                     }
+                    mainForm.lastAction = "Поиск";
                     this.Close();
 
                 }

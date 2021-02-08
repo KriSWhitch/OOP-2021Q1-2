@@ -31,3 +31,4 @@ F:\GitHub\OOP-2021Q1-2\lab3\lab2\obj\Debug\netcoreapp3.1\lab2.genruntimeconfig.c
 F:\GitHub\OOP-2021Q1-2\lab3\lab2\obj\Debug\netcoreapp3.1\lab2.SearchForm.resources
 F:\GitHub\OOP-2021Q1-2\lab3\lab2\obj\Debug\netcoreapp3.1\lab2.InputInSearch.resources
 F:\GitHub\OOP-2021Q1-2\lab3\lab2\obj\Debug\netcoreapp3.1\lab2.SortForm.resources
+F:\GitHub\OOP-2021Q1-2\lab3\lab2\obj\Debug\netcoreapp3.1\lab2.Properties.Resources.resources
