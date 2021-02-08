@@ -17,6 +17,7 @@ namespace lab2
     public partial class Form1 : Form
     {
         public bool completenessFlag = false;
+        public List<DisciplineForSerialize> tempDisciplines;
         public Form1()
         {
             InitializeComponent();
@@ -98,9 +99,9 @@ namespace lab2
 
         private void BtnLoad_Click(object sender, EventArgs e)
         {
-            List<DisciplineForSerialize> disciplinesForSerialize = Deserialize();
+            tempDisciplines = Deserialize();
             DisplayArea.Text = "";
-            foreach (DisciplineForSerialize discipline in disciplinesForSerialize)
+            foreach (DisciplineForSerialize discipline in tempDisciplines)
             {
                 DisplayArea.Text += $"" +
                 $"Название дисциплины: {discipline.Discipline.disciplineName} \r\n" +
@@ -154,7 +155,14 @@ namespace lab2
 
         private void MenuSearch_Click(object sender, EventArgs e)
         {
+            SearchForm form = new SearchForm(this);
+            form.ShowDialog();
+        }
 
+        private void MenuSort_Click(object sender, EventArgs e)
+        {
+            SortForm form = new SortForm(this);
+            form.ShowDialog();
         }
     }
 

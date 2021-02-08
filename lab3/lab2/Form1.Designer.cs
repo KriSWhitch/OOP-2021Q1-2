@@ -58,6 +58,7 @@
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.Menu = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuSort = new System.Windows.Forms.ToolStripMenuItem();
             this.DisplayArea = new System.Windows.Forms.TextBox();
             this.TypeOfControlPanel.SuspendLayout();
             this.SemestrPanel.SuspendLayout();
@@ -329,7 +330,8 @@
             // Menu
             // 
             this.Menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuSearch});
+            this.MenuSearch,
+            this.MenuSort});
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(53, 20);
             this.Menu.Text = "Меню";
@@ -337,9 +339,16 @@
             // MenuSearch
             // 
             this.MenuSearch.Name = "MenuSearch";
-            this.MenuSearch.Size = new System.Drawing.Size(109, 22);
+            this.MenuSearch.Size = new System.Drawing.Size(140, 22);
             this.MenuSearch.Text = "Поиск";
             this.MenuSearch.Click += new System.EventHandler(this.MenuSearch_Click);
+            // 
+            // MenuSort
+            // 
+            this.MenuSort.Name = "MenuSort";
+            this.MenuSort.Size = new System.Drawing.Size(140, 22);
+            this.MenuSort.Text = "Сортировка";
+            this.MenuSort.Click += new System.EventHandler(this.MenuSort_Click);
             // 
             // DisplayArea
             // 
@@ -431,8 +440,8 @@
         private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem Menu;
         private System.Windows.Forms.ToolStripMenuItem MenuSearch;
-        private System.Windows.Forms.TextBox Display;
-        private System.Windows.Forms.TextBox DisplayArea;
+        internal System.Windows.Forms.TextBox DisplayArea;
+        private System.Windows.Forms.ToolStripMenuItem MenuSort;
     }
 }
 
