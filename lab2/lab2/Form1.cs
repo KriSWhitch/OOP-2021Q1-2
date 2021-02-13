@@ -54,7 +54,7 @@ namespace lab2
                     DisciplineCours.Text.Length > 0 && DisciplineSpeciality.Text.Length > 0 &&
                     NumberOfLectures.Text.Length > 0 &&
                     NumberOfLabratoryExercises.Text.Length > 0 &&
-                    (FirstSemestrRadioBtn.Checked || SecondSemestrRadioBtn.Checked)
+                    (FirstSemestrRadioBtn.Checked || SecondSemestrRadioBtn.Checked) && LectorsAuditory.Text.Length == 5
                 ) completenessFlag = true;
 
 
@@ -153,6 +153,36 @@ namespace lab2
             if (textBox.Text.Length == 0) textBox.BackColor = Color.Red;
             else textBox.BackColor = Color.White;
         }
+
+        private void LettersOnly_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            TextBox textbox = (TextBox)sender;
+            if (!Char.IsLetter(number)) e.Handled = true;
+            if (number == (char)Keys.Back || (number == (char)Keys.Space && textbox.Text.Length > 0)) e.Handled = false;
+        }
+
+        private void DigitsOnly_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            TextBox textbox = (TextBox)sender;
+            if (!Char.IsDigit(number)) e.Handled = true;
+            if (!(textbox.Text.Length <= 1)) e.Handled = true;
+            if (number == (char)Keys.Back) e.Handled = false;
+        }
+
+        private void Auditory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            TextBox textbox = (TextBox)sender;
+            if (!Char.IsDigit(number)) e.Handled = true;
+            if (Char.IsDigit(number) && (textbox.Text.Length < 3 || (textbox.Text.Length > 3 && textbox.Text.Length < 5))) e.Handled = false;
+            else e.Handled = true;
+            if (number == (char)Keys.Back) e.Handled = false;
+            if (number == '-' && textbox.Text.Length == 3) e.Handled = false;
+        }
+
+
     }
 
     public class Lector
