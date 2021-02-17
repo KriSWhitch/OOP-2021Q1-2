@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<ArrayOfDisciplineForSerialize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Асмыкович Иван Кузьмич</fullname>
+      <department>Математика</department>
+      <auditory>224-4</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>Математика</disciplineName>
+      <semestr>1 семестр</semestr>
+      <cours>1 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>18</numberOfLectures>
+      <numberOfLabratoryExercises>12</numberOfLabratoryExercises>
+      <typeOfControl>Экзамен</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Бобрович Олег Георгиевич</fullname>
+      <department>Физика</department>
+      <auditory>312-4</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>Физика</disciplineName>
+      <semestr>1 семестр</semestr>
+      <cours>1 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>18</numberOfLectures>
+      <numberOfLabratoryExercises>14</numberOfLabratoryExercises>
+      <typeOfControl>Экзамен</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Пацей Наталья Владимировна</fullname>
+      <department>Программной Инженерии</department>
+      <auditory>327-1</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>ООП</disciplineName>
+      <semestr>2 семестр</semestr>
+      <cours>2 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>18</numberOfLectures>
+      <numberOfLabratoryExercises>13</numberOfLabratoryExercises>
+      <typeOfControl>Экзамен</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Подручный Михаил Викторович</fullname>
+      <department>Философии и права</department>
+      <auditory>221-4</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>Философия</disciplineName>
+      <semestr>1 семестр</semestr>
+      <cours>2 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>12</numberOfLectures>
+      <numberOfLabratoryExercises>6</numberOfLabratoryExercises>
+      <typeOfControl>Экзамен</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Сарока Виктор Викторович</fullname>
+      <department>Автоматизации производственных процессов и электротехники</department>
+      <auditory>112-1</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>Электроника</disciplineName>
+      <semestr>2 семестр</semestr>
+      <cours>1 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>16</numberOfLectures>
+      <numberOfLabratoryExercises>8</numberOfLabratoryExercises>
+      <typeOfControl>Зачёт</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+  <DisciplineForSerialize>
+    <Lector>
+      <fullname>Белодед Николай Иванович</fullname>
+      <department>Программной инженерии</department>
+      <auditory>408-1</auditory>
+    </Lector>
+    <Discipline>
+      <disciplineName>ОАиП</disciplineName>
+      <semestr>2 семестр</semestr>
+      <cours>1 курс</cours>
+      <speciality>ПОИБМС</speciality>
+      <numberOfLectures>15</numberOfLectures>
+      <numberOfLabratoryExercises>13</numberOfLabratoryExercises>
+      <typeOfControl>Экзамен</typeOfControl>
+    </Discipline>
+  </DisciplineForSerialize>
+</ArrayOfDisciplineForSerialize>
