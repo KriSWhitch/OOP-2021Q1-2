@@ -17,7 +17,7 @@ namespace lab2
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(Form1.GetInstance()); // запуск приложения с использованием паттерна Singleton, это не позволяет создать второй объект Form1 с помощью new
         }
     }
 }

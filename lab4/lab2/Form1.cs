@@ -17,9 +17,26 @@ namespace lab2
     public partial class Form1 : Form
     {
         public bool completenessFlag = false;
-        public Form1()
+        private Form1() //использование паттерна Singleton, это не позволяет создать второй объект Form1 с помощью new
         {
             InitializeComponent();
+            ApplicationParameters.GetInstance();
+        }
+
+        // Объект одиночки храниться в статичном поле класса.
+        private static Form1 _instance;
+
+        // Это статический метод, управляющий доступом к экземпляру одиночки.
+        // При первом запуске, он создаёт экземпляр одиночки и помещает его в
+        // статическое поле. При последующих запусках, он возвращает клиенту
+        // объект, хранящийся в статическом поле.
+        public static Form1 GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Form1();
+            }
+            return _instance;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -60,20 +77,19 @@ namespace lab2
 
             if (completenessFlag)
             {
-                Lector lector = new Lector();
-                Discipline discipline = new Discipline();
-                lector.fullname = LectorsFullname.Text;
-                lector.department = LectorsDepartment.Text;
-                lector.auditory = LectorsAuditory.Text;
-                discipline.disciplineName = DisciplineName.Text;
+                DisciplineFactory disFactory = new DisciplineFactory();
+
+                LectorBuilder lectorBuilder = new LectorBuilder();
+                LectorDirector lectorDirector = new LectorDirector(lectorBuilder);
+                lectorDirector.makeStandartLector(LectorsFullname.Text, LectorsAuditory.Text, LectorsDepartment.Text);
+                Lector lector = lectorBuilder.getLector(); 
+
+                //Lector lector = disFactory.createLector(LectorsFullname.Text, LectorsAuditory.Text, LectorsDepartment.Text);
+                Discipline discipline = disFactory.createDiscipline(DisciplineName.Text, DisciplineCours.Text, DisciplineSpeciality.Text, NumberOfLectures.Text, NumberOfLabratoryExercises.Text);
                 foreach (RadioButton rb in SemestrPanel.Controls)
                 {
                     if (rb.Checked) discipline.semestr = rb.Text;
                 }
-                discipline.cours = DisciplineCours.Text;
-                discipline.speciality = DisciplineSpeciality.Text;
-                discipline.numberOfLectures = NumberOfLectures.Text;
-                discipline.numberOfLabratoryExercises = NumberOfLabratoryExercises.Text;
                 foreach (RadioButton rb in TypeOfControlPanel.Controls)
                 {
                     if (rb.Checked) discipline.typeOfControl = rb.Text;
@@ -185,11 +201,18 @@ namespace lab2
 
     }
 
-    public class Lector
+    public class Lector : ILectorPrototype
     {
         public string fullname;
         public string department;
         public string auditory;
+
+        public Lector Clone()
+        {
+            var lector = new Lector();
+            lector = (Lector)this.MemberwiseClone();
+            return lector;
+        }
     }
     public class Discipline
     {
@@ -220,6 +243,8 @@ namespace lab2
         }
 
     }
+
+
 
 
 }
