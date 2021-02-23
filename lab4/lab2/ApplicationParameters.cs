@@ -8,10 +8,10 @@ namespace lab2
     class ApplicationParameters
     {
         Form1 mainForm = Form1.GetInstance();
-        Color bgColor;
-        Font font;
-        int height;
-        int width;
+        public Color bgColor;
+        public Font font;
+        public int height;
+        public int width;
 
         private ApplicationParameters()
         {

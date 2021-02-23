@@ -13,14 +13,14 @@ using System.Xml.Serialization;
 
 namespace lab2
 {
-    
+
     public partial class Form1 : Form
     {
+        ApplicationParameters form1Params;
         public bool completenessFlag = false;
         private Form1() //использование паттерна Singleton, это не позволяет создать второй объект Form1 с помощью new
         {
             InitializeComponent();
-            ApplicationParameters.GetInstance();
         }
 
         // Объект одиночки храниться в статичном поле класса.
@@ -50,6 +50,7 @@ namespace lab2
             DisciplineCours.Items.Add("3 курс"); DisciplineCours.Items.Add("4 курс");
             DisciplineSpeciality.Items.Add("ПОИТ"); DisciplineSpeciality.Items.Add("ДЭВИ");
             DisciplineSpeciality.Items.Add("ПОИБМС"); DisciplineSpeciality.Items.Add("ИСиТ");
+            form1Params = ApplicationParameters.GetInstance();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -114,6 +115,12 @@ namespace lab2
 
         private void BtnLoad_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(
+                    $"{form1Params.height} - высота основной формы",
+                    "Сообщение об ошибке",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+            );
             List<DisciplineForSerialize> disciplinesForSerialize = Deserialize();
             DisplayArea.Text = "";
             foreach (DisciplineForSerialize discipline in disciplinesForSerialize)

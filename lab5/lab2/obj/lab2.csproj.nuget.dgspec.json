@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\GitHub\\OOP-2021Q1-2\\lab4\\lab2\\lab2.csproj": {}
+    "F:\\GitHub\\OOP-2021Q1-2\\lab5\\lab2\\lab2.csproj": {}
   },
   "projects": {
-    "F:\\GitHub\\OOP-2021Q1-2\\lab4\\lab2\\lab2.csproj": {
+    "F:\\GitHub\\OOP-2021Q1-2\\lab5\\lab2\\lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GitHub\\OOP-2021Q1-2\\lab4\\lab2\\lab2.csproj",
+        "projectUniqueName": "F:\\GitHub\\OOP-2021Q1-2\\lab5\\lab2\\lab2.csproj",
         "projectName": "lab2",
-        "projectPath": "F:\\GitHub\\OOP-2021Q1-2\\lab4\\lab2\\lab2.csproj",
+        "projectPath": "F:\\GitHub\\OOP-2021Q1-2\\lab5\\lab2\\lab2.csproj",
         "packagesPath": "C:\\Users\\KriSWhitch\\.nuget\\packages\\",
-        "outputPath": "F:\\GitHub\\OOP-2021Q1-2\\lab4\\lab2\\obj\\",
+        "outputPath": "F:\\GitHub\\OOP-2021Q1-2\\lab5\\lab2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
