@@ -18,126 +18,6 @@ namespace lab2
             mainForm.Enabled = false;
         }
 
-        //позволяет объектам с несовместимыми интерфейсами работать вместе.
-        #region Adapter 
-        interface IPen
-        {
-            string Write();
-        }
-
-        class Pen : IPen
-        {
-            public string Write()
-            {
-                return "Ручкой пишет";
-            }
-        }//ghostly messanger
-
-        interface IChalk
-        {
-            string Draw();
-        }
-
-        class Chalk : IChalk
-        {
-            public string Draw()
-            {
-                return "Мелом пишет";
-            }
-        }
-
-        class Student
-        {
-            public string Stuff(IPen stuff)
-            {
-                return stuff.Write();
-            }
-        }
-
-
-
-        class ChalkToPenAdapter : IPen
-        {
-            Chalk chalk;
-            public ChalkToPenAdapter(Chalk c)
-            {
-                chalk = c;
-            }
-
-            public string Write()
-            {
-                return chalk.Draw();
-            }
-        }
-        #endregion
-
-        #region Decorator
-        abstract class Cake
-        {
-            public Cake(string n)
-            {
-                this.Name = n;
-            }
-
-            public string Name { get; protected set; }
-            public abstract int GetCost();
-        }
-
-        class AppleCake : Cake
-        {
-            public AppleCake() : base("Яблочный пирог")
-            { }
-            public override int GetCost()
-            {
-                return 6;
-            }
-        }
-
-        class ChocolateCake : Cake
-        {
-            public ChocolateCake()
-                : base("Шоколадный пирог")
-            { }
-            public override int GetCost()
-            {
-                return 10;
-            }
-        }
-
-        abstract class CakeDecorator : Cake
-        {
-            protected Cake Cake;
-            public CakeDecorator(string n, Cake Cake) : base(n)
-            {
-                this.Cake = Cake;
-            }
-        }
-
-        class DeliveryCake : CakeDecorator
-        {
-            public DeliveryCake(Cake p)
-                : base(p.Name + ", с доставкой", p)
-            { }
-
-            public override int GetCost()
-            {
-                return Cake.GetCost() + 5;
-            }
-        }
-
-        class ThereCake : CakeDecorator
-        {
-            public ThereCake(Cake p)
-                : base(p.Name + ", есть на месте", p)
-            { }
-
-            public override int GetCost()
-            {
-                return Cake.GetCost() - 1;
-            }
-        }
-        #endregion
-
 
         private void lab5_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -180,6 +60,44 @@ namespace lab2
             Cake4 = new ThereCake(Cake4);
             lab5Display.Text += String.Format("Название: {0}\r\n", Cake4.Name);
             lab5Display.Text += String.Format("Цена: {0}\r\n", Cake4.GetCost());
+        }
+
+        private void Observer_Click(object sender, EventArgs e)
+        {
+            lab5Display.Text = "";
+            // Клиентский код.
+            var subject = new Subject();
+            var observerA = new ConcreteObserverA();
+            subject.Attach(lab5Display, observerA);
+
+            var observerB = new ConcreteObserverB();
+            subject.Attach(lab5Display, observerB);
+
+            subject.SomeBusinessLogic(lab5Display);
+            subject.SomeBusinessLogic(lab5Display);
+
+            subject.Detach(lab5Display, observerB);
+
+            subject.SomeBusinessLogic(lab5Display);
+        }
+
+        private void Strategy_Click(object sender, EventArgs e)
+        {
+            lab5Display.Text = "";
+            // Клиентский код выбирает конкретную стратегию и передаёт её в
+            // контекст. Клиент должен знать о различиях между стратегиями,
+            // чтобы сделать правильный выбор.
+            var context = new Context();
+
+            lab5Display.Text += "Клиент: Выбрана нормальная сортировка.\r\n";
+            context.SetStrategy(new ConcreteStrategyA());
+            context.DoSomeBusinessLogic(lab5Display);
+
+            lab5Display.Text += "\r\n";
+
+            lab5Display.Text += ("Клиент: Выбрана обратная сортировка.\r\n");
+            context.SetStrategy(new ConcreteStrategyB());
+            context.DoSomeBusinessLogic(lab5Display);
         }
     }
 }
