@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lab6n7"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="TrueFriends" Height="450" Width="800" ResizeMode="CanMinimize" Icon="icon.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            <FrameworkElement x:Key="MouseCursor" Cursor="arrow_bold.cur"/>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Margin="300,169,0,0" VerticalAlignment="Top" Width="200" Height="80"/>
+
     </Grid>
 </Window>

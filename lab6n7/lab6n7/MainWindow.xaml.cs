@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace lab6n7
@@ -23,6 +24,7 @@ namespace lab6n7
         public MainWindow()
         {
             InitializeComponent();
+            Mouse.OverrideCursor = ((FrameworkElement)this.Resources["MouseCursor"]).Cursor;
         }
     }
 }

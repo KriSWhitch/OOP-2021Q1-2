@@ -1,0 +1,15 @@
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\lab6n7.exe.config
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\lab6n7.exe
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\lab6n7.pdb
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csprojAssemblyReference.cache
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\MainWindow.g.cs
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\App.g.cs
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7_MarkupCompile.cache
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7_MarkupCompile.lref
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\MainWindow.baml
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.g.resources
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.Properties.Resources.resources
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csproj.GenerateResource.cache
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csproj.CoreCompileInputs.cache
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.exe
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.pdb
