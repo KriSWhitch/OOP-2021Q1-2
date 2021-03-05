@@ -13,3 +13,10 @@ F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csproj.GenerateResource.ca
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csproj.CoreCompileInputs.cache
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.exe
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.pdb
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\MaterialDesignColors.dll
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\MaterialDesignThemes.Wpf.dll
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\MaterialDesignColors.pdb
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\MaterialDesignThemes.Wpf.pdb
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\bin\Debug\MaterialDesignThemes.Wpf.xml
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\App.baml
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csproj.CopyComplete

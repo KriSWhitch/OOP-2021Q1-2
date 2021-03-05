@@ -3,16 +3,93 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab6n7"
         mc:Ignorable="d"
-        Title="TrueFriends" Height="450" Width="800" ResizeMode="CanMinimize" Icon="icon.ico">
+        xmlns:local="clr-namespace:lab6n7"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="TrueFriends" Height="555.5" Width="995" ResizeMode="CanMinimize" Icon="icon.ico" Foreground="White">
     <Window.Resources>
-        <ResourceDictionary>
-            <FrameworkElement x:Key="MouseCursor" Cursor="arrow_bold.cur"/>
-        </ResourceDictionary>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <FrameworkElement x:Key="MouseCursor" Cursor="arrow_bold.cur"/>
     </Window.Resources>
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="300,169,0,0" VerticalAlignment="Top" Width="200" Height="80"/>
 
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <Grid Background="LightGray">
+        <Grid Height="60" VerticalAlignment="Top" Background="#5AA9B0">
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+                <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Content="Account"/>
+                        <Button Content="Settings"/>
+                        <Button Content="Help"/>
+                        <Separator/>
+                        <Button x:Name="ButtonPopUpLogout" Content="Logout" Click="ButtonPopUpLogout_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF3E7585">
+            <StackPanel>
+                <Grid Height="60" Background="#FF3E7585">
+                    <Button x:Name="ButtonCloseMenu" Click="ButtonCloseMenu_Click" Visibility="Collapsed" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="White" Width="25" Height="25"></materialDesign:PackIcon>
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Click="ButtonOpenMenu_Click" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <materialDesign:PackIcon Kind="Menu" Foreground="White" Width="25" Height="25"></materialDesign:PackIcon>
+                    </Button>
+                </Grid>
+                <ListView Margin="0 90" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                            <TextBlock Text="Главная" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                            <TextBlock Text="Создать" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Ticket" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                            <TextBlock Text="Билеты" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Message" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                            <TextBlock Text="Сообщения" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Github" Width="25" Height="25" VerticalAlignment="Center" Margin="10"></materialDesign:PackIcon>
+                            <TextBlock Text="GitHub" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
     </Grid>
+
 </Window>
