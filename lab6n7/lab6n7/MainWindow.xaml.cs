@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Shapes;
 
+
 namespace lab6n7
 {
     /// <summary>
@@ -26,6 +27,8 @@ namespace lab6n7
             InitializeComponent();
             Mouse.OverrideCursor = ((FrameworkElement)this.Resources["MouseCursor"]).Cursor;
         }
+
+
 
         private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +45,33 @@ namespace lab6n7
         {
             ButtonOpenMenu.Visibility = Visibility.Collapsed;
             ButtonCloseMenu.Visibility = Visibility.Visible;
+        }
 
+        private void GitHubButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/KriSWhitch/OOP-2021Q1-2/tree/master/lab6n7");
+        }
+
+        private void ButtonFAQ_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Version 1.0 ©KriSWhitch", "FAQ", MessageBoxButton.OK);
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new HomePage());
+        }
+
+        private void CreateAdButton_Click(object sender, RoutedEventArgs e)
+        {
+            GridMain.Children.Clear();
+            GridMain.Children.Add(new CreateAdPage());
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            HomeButton_Click(sender, e);
         }
     }
 }
