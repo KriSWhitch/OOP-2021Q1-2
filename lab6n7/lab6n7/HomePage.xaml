@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:lab6n7"
              mc:Ignorable="d" 
              Height="620" Width="1220">
-    <Grid Background="Wheat">
+    <Grid Background="White">
             
     </Grid>
 </UserControl>
