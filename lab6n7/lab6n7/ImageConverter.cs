@@ -1,34 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace lab6n7
 {
     public static class ImageConverter
     {
-        public static string ImageToBase64(BitmapSource bitmap)
+
+        public static Bitmap ConvertToBitmap(BitmapSource bitmapSource)
         {
-            var encoder = new PngBitmapEncoder();
-            var frame = BitmapFrame.Create(bitmap);
-            encoder.Frames.Add(frame);
-            using (var stream = new MemoryStream())
-            {
-                encoder.Save(stream);
-                return Convert.ToBase64String(stream.ToArray());
-            }
+            var width = bitmapSource.PixelWidth;
+            var height = bitmapSource.PixelHeight;
+            var stride = width * ((bitmapSource.Format.BitsPerPixel + 7) / 8);
+            var memoryBlockPointer = Marshal.AllocHGlobal(height * stride);
+            bitmapSource.CopyPixels(new Int32Rect(0, 0, width, height), memoryBlockPointer, height * stride, stride);
+            var bitmap = new Bitmap(width, height, stride, System.Drawing.Imaging.PixelFormat.Format32bppPArgb, memoryBlockPointer);
+            return bitmap;
         }
 
-        public static BitmapSource Base64ToImage(string base64)
+        public static ImageSource ImageSourceFromBitmap(Bitmap bmp)
         {
-            byte[] bytes = Convert.FromBase64String(base64);
-            using (var stream = new MemoryStream(bytes))
+            var handle = bmp.GetHbitmap();
+            try
             {
-                return BitmapFrame.Create(stream);
+                return Imaging.CreateBitmapSourceFromHBitmap(handle, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             }
+            finally { }
         }
     }
 }

@@ -7,6 +7,21 @@
              mc:Ignorable="d" 
              Height="620" Width="1220">
     <Grid Background="White">
-            
+        <DataGrid x:Name="MainGrid" Loaded="MainGrid_Loaded" AutoGenerateColumns="False" IsReadOnly="True" Foreground="Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding ShortName}" Width="3*"/>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category}" Width="2*" />
+                <DataGridTextColumn Header="Рейтинг" Binding="{Binding Raiting}"  Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"  Width="2*"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"  Width="2*"/>
+                <DataGridTemplateColumn Header="Фото" Width="2*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding AdvertImage}" Width="64" Height="64"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

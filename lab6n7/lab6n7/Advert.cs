@@ -19,6 +19,6 @@ namespace lab6n7
         public double raiting; // Рейтинг товара
         public decimal cost; // Цена товара
         public int amount; // Количество товара на складе
-        public List<string> images = new List<string>(); // Картинки к объявлению
+        public List<Picture> images = new List<Picture>(); // Картинки к объявлению
     }
 }
