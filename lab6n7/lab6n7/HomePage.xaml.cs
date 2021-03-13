@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace lab6n7
 {
@@ -34,7 +23,7 @@ namespace lab6n7
             ResultCollection = new List<AdvertInGrid>();
             foreach (var el in adList)
             {
-                ResultCollection.Add(new AdvertInGrid { FullName = el.fullName, ShortName = el.shortName, Category = el.category, Raiting = el.raiting, Cost = el.cost, Amount = el.amount, AdvertImage = ImageConverter.ImageSourceFromBitmap(el.images[0].Source), Images = el.images});
+                ResultCollection.Add(new AdvertInGrid { FullName = el.FullName, ShortName = el.ShortName, Category = el.Category, Raiting = el.Raiting, Cost = el.Cost, Amount = el.Amount, AdvertImage = ImageConverter.ImageSourceFromBitmap(el.Images[0].Source), Images = el.Images });
             }
             MainGrid.ItemsSource = ResultCollection;
         }

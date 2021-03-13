@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 
 namespace lab6n7
 {
+    // Данный класс используется для отображения объявлений в приложении
     public class AdvertInGrid
     {
         public string FullName { get; set; } // Полное название товара
@@ -18,6 +19,6 @@ namespace lab6n7
         public decimal Cost { get; set; }  // Цена товара
         public int Amount { get; set; }  // Количество товара на складе
         public ImageSource AdvertImage { get; set; }  // Картинка для отображения в списке
-        public List<Picture> Images {get; set;}
+        public List<Picture> Images {get; set; } // Список картинок прикрепленных к объявлению
     }
 }

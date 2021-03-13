@@ -32,10 +32,23 @@ namespace lab6n7
             InitializeComponent();
         }
 
+        bool IsValidImage(string filename)
+        {
+            try
+            {
+                BitmapImage newImage = new BitmapImage(new Uri(filename));
+            }
+            catch (NotSupportedException)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) 
+            if (openFileDialog.ShowDialog() == true && IsValidImage(openFileDialog.FileName)) 
             {
                 if (AdMainImage.Source == null) 
                 {
@@ -66,8 +79,10 @@ namespace lab6n7
                     MessageBox.Show("Вы не можете добавить более 4-х фотографий!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
-            
-            
+            else
+            {
+                MessageBox.Show("Вы должны выбрать картинку!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void AdMainImageButtonClose_Click(object sender, RoutedEventArgs e)
@@ -116,16 +131,16 @@ namespace lab6n7
             if (completenessFlag)
             {
                 Advert ad = new Advert();
-                ad.fullName = AdFullNameTextBox.Text;
-                ad.shortName = AdShortNameTextBox.Text;
-                ad.raiting = Double.Parse(AdRaitingTextBox.Text);
-                ad.cost = Convert.ToDecimal(AdCostTextBox.Text);
-                ad.category = AdCategoryTextBox.Text;
-                ad.amount = Convert.ToInt32(AdAmountTextBox.Text);
-                if (AdMainImage.Source != null) ad.images.Add(new Picture(ImageConverter.ConvertToBitmap(AdMainImage.Source as BitmapImage)));
-                if (AdSubImage1.Source != null) ad.images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage1.Source as BitmapImage)));
-                if (AdSubImage2.Source != null) ad.images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage2.Source as BitmapImage)));
-                if (AdSubImage3.Source != null) ad.images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage3.Source as BitmapImage)));
+                ad.FullName = AdFullNameTextBox.Text;
+                ad.ShortName = AdShortNameTextBox.Text;
+                ad.Raiting = Double.Parse(AdRaitingTextBox.Text);
+                ad.Cost = Convert.ToDecimal(AdCostTextBox.Text);
+                ad.Category = AdCategoryTextBox.Text;
+                ad.Amount = Convert.ToInt32(AdAmountTextBox.Text);
+                if (AdMainImage.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdMainImage.Source as BitmapImage)));
+                if (AdSubImage1.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage1.Source as BitmapImage)));
+                if (AdSubImage2.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage2.Source as BitmapImage)));
+                if (AdSubImage3.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage3.Source as BitmapImage)));
                 Serialization.Serialize(ad);
             }
             else

@@ -67,6 +67,7 @@
     <Compile Include="AdvertInGrid.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Serialization.cs" />
+    <Compile Include="RegexFullNameValidationRule.cs" />
     <Page Include="CreateAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

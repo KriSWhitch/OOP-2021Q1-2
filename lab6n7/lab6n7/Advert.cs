@@ -1,24 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Xml.Serialization;
+using System.ComponentModel;
 
 namespace lab6n7
 {
-    //[XmlInclude(typeof(BitmapImage))]
     public class Advert
     {
-        public string fullName; // Полное название товара
-        public string shortName; // Краткое название товара
-        public string category; // Категория товара
-        public double raiting; // Рейтинг товара
-        public decimal cost; // Цена товара
-        public int amount; // Количество товара на складе
-        public List<Picture> images = new List<Picture>(); // Картинки к объявлению
+        public string FullName { get; set; } // Полное название товара REGEXP: ^[a-zа-я0-9-_\s]{3,32}$
+        public string ShortName { get; set; } // Краткое название товара REGEXP: ^[a-zа-я0-9-_\s]{3,16}$
+        public string Category { get; set; } // Категория товара
+        public double Raiting { get; set; } // Рейтинг товара REGEXP: ^(([0-9]|1[0]).[0-9]{1})|([0-9]|1[0])$
+        public decimal Cost { get; set; } // Цена товара REGEXP: ^((\d{1,20}).(\d{1,2}))|(\d{1,20})$
+        public int Amount { get; set; } // Количество товара на складе REGEXP: ^(\d{1,20})$
+        public List<Picture> Images { get; set; } = new List<Picture>(); // Картинки к объявлению
     }
 }

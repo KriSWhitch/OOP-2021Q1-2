@@ -9,12 +9,47 @@
     <Grid Background="White">
         <DataGrid x:Name="MainGrid" Loaded="MainGrid_Loaded" AutoGenerateColumns="False" IsReadOnly="True" Foreground="Black">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Binding="{Binding ShortName}" Width="3*"/>
-                <DataGridTextColumn Header="Категория" Binding="{Binding Category}" Width="2*" />
-                <DataGridTextColumn Header="Рейтинг" Binding="{Binding Raiting}"  Width="*"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"  Width="2*"/>
-                <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"  Width="2*"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding ShortName}" Width="3*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category}" Width="2*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Рейтинг" Binding="{Binding Raiting}"  Width="*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Cost}"  Width="2*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Amount}"  Width="2*">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
                 <DataGridTemplateColumn Header="Фото" Width="2*">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Source="{Binding AdvertImage}" Width="64" Height="64"/>
