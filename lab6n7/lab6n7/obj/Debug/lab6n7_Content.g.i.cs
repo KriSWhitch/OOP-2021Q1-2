@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("wpf.mdi.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("arrow_bold.cur")]
 
 

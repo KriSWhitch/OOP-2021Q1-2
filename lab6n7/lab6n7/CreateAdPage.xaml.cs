@@ -122,12 +122,15 @@ namespace lab6n7
             completenessFlag = false;
             if 
             (
-                AdFullNameTextBox.Text.Length > 0 && AdShortNameTextBox.Text.Length > 0 &&
-                AdRaitingTextBox.Text.Length > 0 && AdCostTextBox.Text.Length > 0 &&
-                AdCategoryTextBox.Text.Length > 0 && (AdMainImage.Source != null || AdSubImage1.Source != null || AdSubImage2.Source != null || AdSubImage3.Source != null)
+                ValidationRules.FullNameValidation(AdFullNameTextBox.Text) &&
+                ValidationRules.ShortNameValidation(AdShortNameTextBox.Text) &&
+                ValidationRules.RaitingValidation(AdRaitingTextBox.Text) &&
+                ValidationRules.CostValidation(AdCostTextBox.Text) &&
+                ValidationRules.CategoryValidation(AdCategoryTextBox.Text) &&
+                ValidationRules.AmountValidation(AdAmountTextBox.Text) && 
+                (AdMainImage.Source != null || AdSubImage1.Source != null || AdSubImage2.Source != null || AdSubImage3.Source != null)
             ) completenessFlag = true;
-
-
+            CheckValidation(AdFullNameTextBox.Text, AdShortNameTextBox.Text, AdRaitingTextBox.Text, AdCostTextBox.Text, AdAmountTextBox.Text, AdCategoryTextBox.Text);
             if (completenessFlag)
             {
                 Advert ad = new Advert();
@@ -142,15 +145,85 @@ namespace lab6n7
                 if (AdSubImage2.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage2.Source as BitmapImage)));
                 if (AdSubImage3.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage3.Source as BitmapImage)));
                 Serialization.Serialize(ad);
+                MessageBox.Show(
+                    "Объявление было успешно добавлено!",
+                    "Успех!",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.None
+                );
             }
             else
             {
                 MessageBox.Show(
-                    "Вы не заполнили все необходимые поля!",
+                    "Вы не заполнили все необходимые поля или заполнили их некорректно!",
                     "Сообщение об ошибке",
                     MessageBoxButton.OK,
                     MessageBoxImage.Warning
                 );
+            }
+        }
+
+        private void CheckValidation(string fullName, string shortName, string raiting, string cost, string amount, string category)
+        {
+            if (ValidationRules.FullNameValidation(fullName))
+            {
+                FullNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                FullNameValidationImage.Visibility = Visibility.Visible;
+            } 
+            else 
+            {
+                FullNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                FullNameValidationImage.Visibility = Visibility.Visible;
+            }
+            if (ValidationRules.ShortNameValidation(shortName))
+            {
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                ShortNameValidationImage.Visibility = Visibility.Visible;
+            } 
+            else 
+            {
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                ShortNameValidationImage.Visibility = Visibility.Visible;
+            }
+            if (ValidationRules.RaitingValidation(raiting))
+            {
+                RaitingValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                RaitingValidationImage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                RaitingValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                RaitingValidationImage.Visibility = Visibility.Visible;
+            }
+            if (ValidationRules.CostValidation(cost))
+            {
+                CostValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CostValidationImage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                CostValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CostValidationImage.Visibility = Visibility.Visible;
+            }
+            if (ValidationRules.AmountValidation(amount))
+            {
+                AmountValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                AmountValidationImage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AmountValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                AmountValidationImage.Visibility = Visibility.Visible;
+            }
+            if (ValidationRules.CategoryValidation(category))
+            {
+                CategoryValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CategoryValidationImage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                CategoryValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CategoryValidationImage.Visibility = Visibility.Visible;
             }
         }
 

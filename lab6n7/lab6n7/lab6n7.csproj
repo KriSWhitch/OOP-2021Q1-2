@@ -67,7 +67,7 @@
     <Compile Include="AdvertInGrid.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="Serialization.cs" />
-    <Compile Include="RegexFullNameValidationRule.cs" />
+    <Compile Include="ValidationRules.cs" />
     <Page Include="CreateAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="unchecked.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="arrow_bold.cur" />
