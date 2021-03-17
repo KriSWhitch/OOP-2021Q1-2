@@ -64,10 +64,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdvertInGrid.cs" />
-    <Compile Include="Picture.cs" />
-    <Compile Include="Serialization.cs" />
-    <Compile Include="ValidationRules.cs" />
+    <Compile Include="Classes\AdvertInGrid.cs" />
+    <Compile Include="AdvertPage.xaml.cs">
+      <DependentUpon>AdvertPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Picture.cs" />
+    <Compile Include="Classes\Serialization.cs" />
+    <Compile Include="Classes\ValidationRules.cs" />
+    <Page Include="AdvertPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,7 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Advert.cs" />
+    <Compile Include="Classes\Advert.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -91,7 +98,7 @@
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImageConverter.cs" />
+    <Compile Include="Classes\ImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -125,22 +132,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="mouse.cur" />
+    <Resource Include="Images\mouse.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="click.cur" />
+    <Resource Include="Images\click.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icon.ico" />
+    <Resource Include="Images\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="checked.png" />
+    <Resource Include="Images\checked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="unchecked.png" />
+    <Resource Include="Images\unchecked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="arrow_bold.cur" />
+    <Resource Include="Images\arrow_bold.cur" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

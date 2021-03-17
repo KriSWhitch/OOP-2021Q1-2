@@ -8,6 +8,11 @@
              Height="620" Width="1220">
     <Grid Background="White">
         <DataGrid x:Name="MainGrid" Loaded="MainGrid_Loaded" AutoGenerateColumns="False" IsReadOnly="True" Foreground="Black">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="MouseDoubleClick" Handler="RowDoubleClick"/>
+                </Style>
+            </DataGrid.RowStyle>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding ShortName}" Width="3*">
                     <DataGridTextColumn.HeaderStyle>

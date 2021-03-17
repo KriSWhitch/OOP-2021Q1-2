@@ -89,32 +89,28 @@ namespace lab6n7
         {
             Button btn = (Button)sender;
             btn.Visibility = Visibility.Collapsed;
-            AdMainImage.Source = null;
-            AdMainImageWrapper.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
+            ResetPicture(AdMainImage, AdMainImageWrapper);
         }
 
         private void AdSubImage1ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             btn.Visibility = Visibility.Collapsed;
-            AdSubImage1.Source = null;
-            AdSubImage1Wrapper.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
+            ResetPicture(AdSubImage1, AdSubImage1Wrapper);
         }
 
         private void AdSubImage2ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             btn.Visibility = Visibility.Collapsed;
-            AdSubImage2.Source = null;
-            AdSubImage2Wrapper.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
+            ResetPicture(AdSubImage2, AdSubImage2Wrapper);
         }
 
         private void AdSubImage3ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
             btn.Visibility = Visibility.Collapsed;
-            AdSubImage3.Source = null;
-            AdSubImage3Wrapper.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
+            ResetPicture(AdSubImage3, AdSubImage3Wrapper);
         }
 
         private void CreateAdButton_Click(object sender, RoutedEventArgs e)
@@ -172,59 +168,65 @@ namespace lab6n7
             } 
             else 
             {
-                FullNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                FullNameValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 FullNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.ShortNameValidation(shortName))
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
             } 
             else 
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.RaitingValidation(raiting))
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CostValidation(cost))
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.AmountValidation(amount))
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CategoryValidation(category))
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
+        }
+
+        private void ResetPicture(System.Windows.Controls.Image img, Grid grid)
+        {
+            img.Source = null;
+            grid.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
         }
 
     }

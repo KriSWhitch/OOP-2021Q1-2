@@ -7,7 +7,7 @@
         xmlns:myCtrls="clr-namespace:lab6n7"
         xmlns:local="clr-namespace:lab6n7"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="TrueFriends" Height="720" Width="1280" ResizeMode="CanMinimize" Icon="icon.ico" Foreground="White"
+        Title="TrueFriends" Height="720" Width="1280" ResizeMode="CanMinimize" Icon="Images/icon.ico" Foreground="White"
         Loaded="Window_Loaded">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
@@ -22,7 +22,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <FrameworkElement x:Key="MouseCursor" Cursor="arrow_bold.cur"/>
+        <FrameworkElement x:Key="MouseCursor" Cursor="Images/arrow_bold.cur"/>
     </Window.Resources>
 
     <Window.Triggers>

@@ -23,7 +23,7 @@ namespace lab6n7
         }
         public static bool CostValidation(object value)
         {
-            Regex regex = new Regex(pattern: @"^\d*$|^(\d*[,]\d{1,2})$");
+            Regex regex = new Regex(pattern: @"(^\d*$)|(^(\d*[,]\d{1,2})$)");
             return regex.IsMatch((string)value);
         }
         public static bool AmountValidation(object value)

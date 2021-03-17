@@ -25,3 +25,5 @@ F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\HomePage.g.cs
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\HomePage.baml
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\lab6n7.csprojAssemblyReference.cache
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\AdvertPage.g.cs
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\AdvertPage.baml
