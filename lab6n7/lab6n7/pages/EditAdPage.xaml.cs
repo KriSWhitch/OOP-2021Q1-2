@@ -1,8 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +13,58 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Serialization;
 
-namespace lab6n7
+namespace lab6n7.pages
 {
     /// <summary>
-    /// Логика взаимодействия для CreateAdPage.xaml
+    /// Логика взаимодействия для EditAdPage.xaml
     /// </summary>
-    public partial class CreateAdPage : UserControl
+    public partial class EditAdPage : UserControl
     {
-
         bool completenessFlag = false;
+        Advert advert = new Advert();
 
-        public CreateAdPage()
+        public EditAdPage(AdvertInGrid ad)
         {
             InitializeComponent();
+            advert.ID = ad.ID;
+            AdFullNameTextBox.Text = ad.FullName;
+            AdShortNameTextBox.Text = ad.ShortName;
+            AdRaitingTextBox.Text = ad.Raiting + "";
+            AdCostTextBox.Text = ad.Cost + "";
+            AdCategoryTextBox.Text = ad.Category;
+            AdAmountTextBox.Text = ad.Amount + "";
+            for (var i = 0; i < ad.Images.Count; i++)
+            {
+                if (i == 0)
+                {
+                    AdMainImage.Source = ImageConverter.ImageSourceFromBitmap(ad.Images[0].Source);
+                    AdMainImageButtonClose.Visibility = Visibility.Visible;
+                    AdMainImageWrapper.Background = new SolidColorBrush(Colors.Transparent);
+                }
+
+                if (i == 1)
+                {
+                    AdSubImage1.Source = ImageConverter.ImageSourceFromBitmap(ad.Images[1].Source);
+                    AdSubImage1ButtonClose.Visibility = Visibility.Visible;
+                    AdSubImage1Wrapper.Background = new SolidColorBrush(Colors.Transparent);
+                }
+
+
+                if (i == 2)
+                {
+                    AdSubImage2.Source = ImageConverter.ImageSourceFromBitmap(ad.Images[2].Source);
+                    AdSubImage2ButtonClose.Visibility = Visibility.Visible;
+                    AdSubImage2Wrapper.Background = new SolidColorBrush(Colors.Transparent);
+                }
+
+                if (i == 3)
+                {
+                    AdSubImage3.Source = ImageConverter.ImageSourceFromBitmap(ad.Images[3].Source);
+                    AdSubImage3ButtonClose.Visibility = Visibility.Visible;
+                    AdSubImage3Wrapper.Background = new SolidColorBrush(Colors.Transparent);
+                }
+            }
         }
 
         bool IsValidImage(string filename)
@@ -48,14 +83,14 @@ namespace lab6n7
         private void AddPhotoButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true && IsValidImage(openFileDialog.FileName)) 
+            if (openFileDialog.ShowDialog() == true && IsValidImage(openFileDialog.FileName))
             {
-                if (AdMainImage.Source == null) 
+                if (AdMainImage.Source == null)
                 {
                     AdMainImage.Source = new BitmapImage(new Uri(openFileDialog.FileName));
                     AdMainImageButtonClose.Visibility = Visibility.Visible;
                     AdMainImageWrapper.Background = new SolidColorBrush(Colors.Transparent);
-                } 
+                }
                 else if (AdSubImage1.Source == null)
                 {
                     AdSubImage1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
@@ -116,33 +151,40 @@ namespace lab6n7
         private void CreateAdButton_Click(object sender, RoutedEventArgs e)
         {
             completenessFlag = false;
-            if 
+            if
             (
                 ValidationRules.FullNameValidation(AdFullNameTextBox.Text) &&
                 ValidationRules.ShortNameValidation(AdShortNameTextBox.Text) &&
                 ValidationRules.RaitingValidation(AdRaitingTextBox.Text) &&
                 ValidationRules.CostValidation(AdCostTextBox.Text) &&
                 ValidationRules.CategoryValidation(AdCategoryTextBox.Text) &&
-                ValidationRules.AmountValidation(AdAmountTextBox.Text) && 
+                ValidationRules.AmountValidation(AdAmountTextBox.Text) &&
                 (AdMainImage.Source != null || AdSubImage1.Source != null || AdSubImage2.Source != null || AdSubImage3.Source != null)
             ) completenessFlag = true;
             CheckValidation(AdFullNameTextBox.Text, AdShortNameTextBox.Text, AdRaitingTextBox.Text, AdCostTextBox.Text, AdAmountTextBox.Text, AdCategoryTextBox.Text);
             if (completenessFlag)
             {
-                Advert ad = new Advert();
-                ad.FullName = AdFullNameTextBox.Text;
-                ad.ShortName = AdShortNameTextBox.Text;
-                ad.Raiting = Double.Parse(AdRaitingTextBox.Text);
-                ad.Cost = Convert.ToDecimal(AdCostTextBox.Text);
-                ad.Category = AdCategoryTextBox.Text;
-                ad.Amount = Convert.ToInt32(AdAmountTextBox.Text);
-                if (AdMainImage.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdMainImage.Source as BitmapImage)));
-                if (AdSubImage1.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage1.Source as BitmapImage)));
-                if (AdSubImage2.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage2.Source as BitmapImage)));
-                if (AdSubImage3.Source != null) ad.Images.Add(new Picture(ImageConverter.ConvertToBitmap(AdSubImage3.Source as BitmapImage)));
-                Serialization.Serialize(ad);
+                advert.FullName = AdFullNameTextBox.Text;
+                advert.ShortName = AdShortNameTextBox.Text;
+                advert.Raiting = Double.Parse(AdRaitingTextBox.Text);
+                advert.Cost = Convert.ToDecimal(AdCostTextBox.Text);
+                advert.Category = AdCategoryTextBox.Text;
+                advert.Amount = Convert.ToInt32(AdAmountTextBox.Text);
+                advert.Images = new List<Picture>();
+                if (AdMainImage.Source != null) advert.Images.Add(new Picture(ImageConverter.ConvertToBitmapFromInteropBitmap(AdMainImage.Source)));
+                if (AdSubImage1.Source != null) advert.Images.Add(new Picture(ImageConverter.ConvertToBitmapFromInteropBitmap(AdSubImage1.Source)));
+                if (AdSubImage2.Source != null) advert.Images.Add(new Picture(ImageConverter.ConvertToBitmapFromInteropBitmap(AdSubImage2.Source)));
+                if (AdSubImage3.Source != null) advert.Images.Add(new Picture(ImageConverter.ConvertToBitmapFromInteropBitmap(AdSubImage3.Source)));
+                List<Advert> adList = Serialization.Deserialize();
+                var item = adList.SingleOrDefault(x => x.ID == advert.ID);
+                if (item != null)
+                {
+                    adList.Remove(item);
+                    Serialization.Serialize(adList);
+                }
+                Serialization.Serialize(advert);
                 MessageBox.Show(
-                    "Объявление было успешно добавлено!",
+                    "Объявление было успешно изменено!",
                     "Успех!",
                     MessageBoxButton.OK,
                     MessageBoxImage.None
@@ -165,60 +207,60 @@ namespace lab6n7
             {
                 FullNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 FullNameValidationImage.Visibility = Visibility.Visible;
-            } 
-            else 
+            }
+            else
             {
-                FullNameValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                FullNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 FullNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.ShortNameValidation(shortName))
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
-            } 
-            else 
+            }
+            else
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.RaitingValidation(raiting))
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CostValidation(cost))
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.AmountValidation(amount))
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CategoryValidation(category))
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("Images/checked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("Images/unchecked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
         }
@@ -228,6 +270,5 @@ namespace lab6n7
             img.Source = null;
             grid.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(192, 192, 192));
         }
-
     }
 }

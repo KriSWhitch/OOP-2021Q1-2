@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("arrow_bold.cur")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pages/unchecked.png")]
 
 

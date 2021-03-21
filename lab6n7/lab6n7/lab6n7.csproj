@@ -64,22 +64,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\AdvertInGrid.cs" />
-    <Compile Include="AdvertPage.xaml.cs">
+    <Compile Include="classes\AdvertInGrid.cs" />
+    <Compile Include="pages\AdvertPage.xaml.cs">
       <DependentUpon>AdvertPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Picture.cs" />
-    <Compile Include="Classes\Serialization.cs" />
-    <Compile Include="Classes\ValidationRules.cs" />
-    <Page Include="AdvertPage.xaml">
+    <Compile Include="classes\Picture.cs" />
+    <Compile Include="classes\Serialization.cs" />
+    <Compile Include="classes\ValidationRules.cs" />
+    <Page Include="pages\AdvertPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateAdPage.xaml">
+    <Page Include="pages\CreateAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomePage.xaml">
+    <Page Include="pages\EditAdPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,18 +91,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Classes\Advert.cs" />
+    <Compile Include="classes\Advert.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CreateAdPage.xaml.cs">
+    <Compile Include="pages\CreateAdPage.xaml.cs">
       <DependentUpon>CreateAdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.xaml.cs">
+    <Compile Include="pages\EditAdPage.xaml.cs">
+      <DependentUpon>EditAdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\ImageConverter.cs" />
+    <Compile Include="classes\ImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -132,22 +139,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\mouse.cur" />
+    <Resource Include="images\mouse.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\click.cur" />
+    <Resource Include="images\click.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\icon.ico" />
+    <Resource Include="images\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\checked.png" />
+    <Resource Include="images\checked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\unchecked.png" />
+    <Resource Include="images\unchecked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\arrow_bold.cur" />
+    <Resource Include="images\arrow_bold.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pages\unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pages\checked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.0.0\build\MaterialDesignThemes.targets')" />

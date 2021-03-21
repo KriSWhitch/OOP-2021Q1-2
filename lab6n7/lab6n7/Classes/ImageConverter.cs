@@ -16,7 +16,17 @@ namespace lab6n7
 {
     public static class ImageConverter
     {
-
+        public static Bitmap ConvertToBitmapFromInteropBitmap(ImageSource source)
+        {
+            BitmapSource bmpSource = source as BitmapSource;
+            MemoryStream ms = new MemoryStream();
+            BitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bmpSource));
+            encoder.Save(ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(ms);
+            return bitmap;
+        }
         public static Bitmap ConvertToBitmap(BitmapSource bitmapSource)
         {
             var width = bitmapSource.PixelWidth;

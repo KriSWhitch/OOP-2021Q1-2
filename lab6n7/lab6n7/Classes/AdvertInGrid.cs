@@ -12,6 +12,7 @@ namespace lab6n7
     // Данный класс используется для отображения объявлений в приложении
     public class AdvertInGrid
     {
+        public int ID { get; set; } // Идентификатор объявления
         public string FullName { get; set; } // Полное название товара
         public string ShortName { get; set; } // Краткое название товара
         public string Category { get; set; }  // Категория товара

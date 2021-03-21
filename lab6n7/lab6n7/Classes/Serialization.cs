@@ -6,6 +6,17 @@ namespace lab6n7
 {
     public static class Serialization
     {
+        public static void Serialize (List<Advert> adsForSerialize)
+        {
+            List<Advert> advertsForSerialize = adsForSerialize;
+            XmlSerializer xmlf = new XmlSerializer(advertsForSerialize.GetType());
+
+            using (FileStream fs = new FileStream("data.xml", FileMode.Create))
+            {
+                xmlf.Serialize(fs, advertsForSerialize);
+            }
+        }
+
         public static void Serialize(Advert ad)
         {
             List<Advert> advertsForSerialize;

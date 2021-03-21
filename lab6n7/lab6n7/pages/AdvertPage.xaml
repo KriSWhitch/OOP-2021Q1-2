@@ -9,6 +9,21 @@
              Height="620" Width="1220">
     <Grid Background="White" Loaded="Grid_Loaded">
         <StackPanel Margin="10" Orientation="Vertical">
+            <DockPanel Height="40" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button x:Name="ButtonBackToHomePage" Click="ButtonBackToHomePage_Click" Width="70" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Foreground="Black" Width="30" Height="25"></materialDesign:PackIcon>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="ButtonEditAdvert" Click="ButtonEditAdvert_Click" Width="70" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <materialDesign:PackIcon Kind="Edit" Foreground="Black" Width="30" Height="25"></materialDesign:PackIcon>
+                    </Button>
+                    <Button x:Name="ButtonDeleteAdvert" Click="ButtonDeleteAdvert_Click" Width="70" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" HorizontalAlignment="Right">
+                        <materialDesign:PackIcon Kind="Delete" Foreground="Black" Width="30" Height="25"></materialDesign:PackIcon>
+                    </Button>
+                </StackPanel>
+            </DockPanel>
             <StackPanel Orientation="Horizontal" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <StackPanel Margin="0 10 80 10" Orientation="Horizontal">
                     <Label x:Name="AdFullNameLabel" Content="Полное название:" FontSize="20" Width="180" Height="40"></Label>
@@ -52,29 +67,17 @@
                         <StackPanel Margin="0 10" Orientation="Horizontal">
                             <Grid x:Name="AdMainImageWrapper" Background="#C0C0C0">
                                 <Image x:Name="AdMainImage" Cursor="" Width="270" Height="200"></Image>
-                                <Button x:Name="AdMainImageButtonClose" Click="AdMainImageButtonClose_Click" Visibility="Collapsed" Panel.ZIndex="100" Width="60" Height="60" Background="#5AA9B0" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
-                                    <materialDesign:PackIcon Kind="Close" Foreground="White" Width="35" Height="35" HorizontalAlignment="Center"></materialDesign:PackIcon>
-                                </Button>
                             </Grid>
                         </StackPanel>
                     </StackPanel>
                     <Grid x:Name="AdSubImage1Wrapper" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="20 0 0 0" Background="#C0C0C0">
                         <Image x:Name="AdSubImage1" Cursor="" Width="270" Height="200"></Image>
-                        <Button x:Name="AdSubImage1ButtonClose" Click="AdSubImage1ButtonClose_Click" Visibility="Collapsed" Panel.ZIndex="100" Width="45" Height="45" Background="#5AA9B0" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Kind="Close" Foreground="White" Width="25" Height="25" HorizontalAlignment="Center"></materialDesign:PackIcon>
-                        </Button>
                     </Grid>
                     <Grid x:Name="AdSubImage2Wrapper" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="20 0 0 0" Background="#C0C0C0">
                         <Image x:Name="AdSubImage2" Cursor="" Width="270" Height="200"></Image>
-                        <Button x:Name="AdSubImage2ButtonClose" Click="AdSubImage2ButtonClose_Click" Visibility="Collapsed" Panel.ZIndex="100" Width="45" Height="45" Background="#5AA9B0" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Kind="Close" Foreground="White" Width="25" Height="25" HorizontalAlignment="Center"></materialDesign:PackIcon>
-                        </Button>
                     </Grid>
                     <Grid x:Name="AdSubImage3Wrapper" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="20 0 0 0" Background="#C0C0C0">
                         <Image x:Name="AdSubImage3" Cursor="" Width="270" Height="200"></Image>
-                        <Button x:Name="AdSubImage3ButtonClose" Click="AdSubImage3ButtonClose_Click" Visibility="Collapsed" Panel.ZIndex="100" Width="45" Height="45" Background="#5AA9B0" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
-                            <materialDesign:PackIcon Kind="Close" Foreground="White" Width="25" Height="25" HorizontalAlignment="Center"></materialDesign:PackIcon>
-                        </Button>
                     </Grid>
                 </StackPanel>
             </StackPanel>
