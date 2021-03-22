@@ -22,7 +22,7 @@
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <FrameworkElement x:Key="MouseCursor" Cursor="images/arrow_bold.cur"/>
+        <FrameworkElement x:Key="MouseCursor" Cursor="Images/arrow_bold.cur"/>
     </Window.Resources>
 
     <Window.Triggers>

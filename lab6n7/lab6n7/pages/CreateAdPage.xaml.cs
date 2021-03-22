@@ -164,62 +164,62 @@ namespace lab6n7
         {
             if (ValidationRules.FullNameValidation(fullName))
             {
-                FullNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                FullNameValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 FullNameValidationImage.Visibility = Visibility.Visible;
             } 
             else 
             {
-                FullNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                FullNameValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 FullNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.ShortNameValidation(shortName))
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
             } 
             else 
             {
-                ShortNameValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                ShortNameValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 ShortNameValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.RaitingValidation(raiting))
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                RaitingValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                RaitingValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 RaitingValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CostValidation(cost))
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CostValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CostValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 CostValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.AmountValidation(amount))
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                AmountValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                AmountValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 AmountValidationImage.Visibility = Visibility.Visible;
             }
             if (ValidationRules.CategoryValidation(category))
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("checked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("../Images/checked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
             else
             {
-                CategoryValidationImage.Source = new BitmapImage(new Uri("unchecked.png", UriKind.Relative));
+                CategoryValidationImage.Source = new BitmapImage(new Uri("../Images/unchecked.png", UriKind.Relative));
                 CategoryValidationImage.Visibility = Visibility.Visible;
             }
         }

@@ -79,26 +79,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="classes\AdvertInGrid.cs" />
-    <Compile Include="pages\AdvertPage.xaml.cs">
+    <Compile Include="Classes\AdvertInGrid.cs" />
+    <Compile Include="Pages\AdvertPage.xaml.cs">
       <DependentUpon>AdvertPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="classes\Picture.cs" />
-    <Compile Include="classes\Serialization.cs" />
-    <Compile Include="classes\ValidationRules.cs" />
-    <Page Include="pages\AdvertPage.xaml">
+    <Compile Include="Classes\Picture.cs" />
+    <Compile Include="Classes\Serialization.cs" />
+    <Compile Include="Classes\ValidationRules.cs" />
+    <Page Include="Pages\AdvertPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\CreateAdPage.xaml">
+    <Page Include="Pages\CreateAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\EditAdPage.xaml">
+    <Page Include="Pages\EditAdPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\HomePage.xaml">
+    <Page Include="Pages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,21 +106,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="classes\Advert.cs" />
+    <Compile Include="Classes\Advert.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="pages\CreateAdPage.xaml.cs">
+    <Compile Include="Pages\CreateAdPage.xaml.cs">
       <DependentUpon>CreateAdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\EditAdPage.xaml.cs">
+    <Compile Include="Pages\EditAdPage.xaml.cs">
       <DependentUpon>EditAdPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\HomePage.xaml.cs">
+    <Compile Include="Pages\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="classes\ImageConverter.cs" />
+    <Compile Include="Classes\ImageConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -162,28 +162,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\mouse.cur" />
+    <Resource Include="Images\mouse.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\click.cur" />
+    <Resource Include="Images\click.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\icon.ico" />
+    <Resource Include="Images\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\checked.png" />
+    <Resource Include="Images\checked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\unchecked.png" />
+    <Resource Include="Images\unchecked.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\arrow_bold.cur" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pages\unchecked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="pages\checked.png" />
+    <Resource Include="Images\arrow_bold.cur" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
