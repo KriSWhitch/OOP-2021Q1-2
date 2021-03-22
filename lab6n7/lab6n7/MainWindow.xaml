@@ -7,8 +7,8 @@
         xmlns:myCtrls="clr-namespace:lab6n7"
         xmlns:local="clr-namespace:lab6n7"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="TrueFriends" Height="720" Width="1280" ResizeMode="CanMinimize" Icon="images/icon.ico" Foreground="White"
-        Loaded="Window_Loaded">
+        Title="TrueFriends" MinHeight="720" Height="720" MinWidth="1280" Width="1280" Icon="images/icon.ico" Foreground="White"
+        Loaded="Window_Loaded" ResizeMode="CanMinimize">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -33,7 +33,7 @@
             <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
         </EventTrigger>
     </Window.Triggers>
-    
+
     <Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#5AA9B0">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -41,9 +41,12 @@
                     <StackPanel Width="150">
                         <Button x:Name="ButtonFAQ" Content="FAQ" Click="ButtonFAQ_Click"/>
                         <Separator/>
-                        <Button x:Name="ButtonPopUpLogout" Content="Logout" Click="ButtonPopUpLogout_Click"/>
+                        <Button x:Name="ButtonPopUpLogout" Content="{DynamicResource m_MainWindow_ButtonPopUpLogout}" Click="ButtonPopUpLogout_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
+            </StackPanel>
+            <StackPanel Margin="0 0 60 0" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+                <ComboBox x:Name="ComboBoxLanguages" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" Padding="5 0" Height="30" Width="200" Foreground="Black" BorderBrush="#5AA9B0" Background="White"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF3E7585" Panel.ZIndex="100">
@@ -60,19 +63,19 @@
                     <Button x:Name="HomeButton" Click="HomeButton_Click" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" VerticalAlignment="Center" Margin="0 0 10 0"></materialDesign:PackIcon>
-                            <TextBlock Text="Главная" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                            <TextBlock Text="{DynamicResource m_MainWindow_Home}" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Height="60" x:Name="CreateAdButton" Click="CreateAdButton_Click" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" VerticalAlignment="Center" Margin="0 0 10 0"></materialDesign:PackIcon>
-                            <TextBlock Text="Создать объявление" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                            <TextBlock Text="{DynamicResource m_MainWindow_CreateAd}" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Button>
                     <Button Height="60" x:Name="GitHubButton" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" Click="GitHubButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Github" Width="25" Height="25" VerticalAlignment="Center" Margin="0 0 10 0"></materialDesign:PackIcon>
-                            <TextBlock Text="GitHub" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
+                            <TextBlock Text="{DynamicResource m_MainWindow_GitHub}" VerticalAlignment="Center" Margin="20 10" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -81,5 +84,4 @@
         <Grid Background="#C1C0C0" x:Name="GridMain" Margin="60,60,0,0">
         </Grid>
     </Grid>
-
 </Window>

@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Globalization;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 
@@ -14,9 +17,48 @@ namespace lab6n7
         {
             InitializeComponent();
             Mouse.OverrideCursor = ((FrameworkElement)this.Resources["MouseCursor"]).Cursor;
+            App.LanguageChanged += LanguageChanged;
+
+            CultureInfo currLang = App.Language;
+
+            //Заполняем меню смены языка:
+            ComboBoxLanguages.Items.Clear();
+            foreach (var lang in App.Languages)
+            {
+                ComboBoxItem menuLang = new ComboBoxItem();
+                menuLang.Content = lang.DisplayName;
+                menuLang.Tag = lang;
+                menuLang.IsSelected = lang.Equals(currLang);
+                menuLang.Selected += ChangeLanguageClick;
+                ComboBoxLanguages.Items.Add(menuLang);
+            }
+            ComboBoxLanguages.SelectedIndex = 1;
         }
 
+        private void LanguageChanged(object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
 
+            //Отмечаем нужный пункт смены языка как выбранный язык
+            foreach (ComboBoxItem i in ComboBoxLanguages.Items)
+            {
+                CultureInfo ci = i.Tag as CultureInfo;
+                i.IsSelected = ci != null && ci.Equals(currLang);
+            }
+        }
+
+        private void ChangeLanguageClick(object sender, EventArgs e)
+        {
+            ComboBoxItem mi = sender as ComboBoxItem;
+            if (mi != null)
+            {
+                CultureInfo lang = mi.Tag as CultureInfo;
+                if (lang != null)
+                {
+                    App.Language = lang;
+                }
+            }
+        }
 
         private void ButtonPopUpLogout_Click(object sender, RoutedEventArgs e)
         {

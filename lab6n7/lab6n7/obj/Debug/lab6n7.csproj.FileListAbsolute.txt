@@ -28,3 +28,5 @@ F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\pages\AdvertPage.baml
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\pages\CreateAdPage.baml
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\pages\EditAdPage.baml
 F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\pages\HomePage.baml
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\Resources\lang.ru-RU.baml
+F:\GitHub\OOP-2021Q1-2\lab6n7\lab6n7\obj\Debug\Resources\lang.baml
