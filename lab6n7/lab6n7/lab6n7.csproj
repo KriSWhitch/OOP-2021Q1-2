@@ -80,6 +80,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\AdvertInGrid.cs" />
+    <Compile Include="Classes\ApplicationViewModel.cs" />
     <Compile Include="Pages\AdvertPage.xaml.cs">
       <DependentUpon>AdvertPage.xaml</DependentUpon>
     </Compile>
