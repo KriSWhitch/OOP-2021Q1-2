@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Style x:Key="HeaderStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#FFEAEAEA" />
+    </Style>
+    <Style x:Key="MenuStyle" TargetType="Grid">
+        <Setter Property="Background" Value="#FFAEAEAE" />
+    </Style>
+    <Style x:Key="ButtonIconStyle" TargetType="materialDesign:PackIcon">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+    <Style x:Key="ButtonIconPopUpStyle" TargetType="materialDesign:PopupBox">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+</ResourceDictionary>
