@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:TrueFriendsApp.View"
       mc:Ignorable="d" 
       Background="White" MinWidth="1220" MinHeight="620">
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
