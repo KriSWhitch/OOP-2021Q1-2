@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "TrueFriendsApp/1.0.0": {
         "dependencies": {
+          "AsyncEnumerator": "4.0.2",
           "DevExpressMvvm": "20.2.3",
           "FontAwesome.WPF": "4.7.0.9",
           "MaterialDesignThemes": "4.0.0",
@@ -19,6 +20,14 @@
         },
         "runtime": {
           "TrueFriendsApp.dll": {}
+        }
+      },
+      "AsyncEnumerator/4.0.2": {
+        "runtime": {
+          "lib/netstandard2.1/AsyncEnumerable.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.0.2.0"
+          }
         }
       },
       "ControlzEx/4.3.0": {
@@ -259,6 +268,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AsyncEnumerator/4.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mjBg9pGuQVbCeC/3t75B74mRjIIqOg6o212CJ7g37wRrPIJTGzuFKo9/TsVuJl2by2I1ESJLyFnNFHHEMRUysA==",
+      "path": "asyncenumerator/4.0.2",
+      "hashPath": "asyncenumerator.4.0.2.nupkg.sha512"
     },
     "ControlzEx/4.3.0": {
       "type": "package",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj": {}
+    "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj": {}
   },
   "projects": {
-    "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj": {
+    "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj",
+        "projectUniqueName": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj",
         "projectName": "TrueFriendsApp",
-        "projectPath": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj",
+        "projectPath": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj",
         "packagesPath": "C:\\Users\\KriSWhitch\\.nuget\\packages\\",
-        "outputPath": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\obj\\",
+        "outputPath": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,6 +42,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AsyncEnumerator": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "DevExpressMvvm": {
               "target": "Package",
               "version": "[20.2.3, )"

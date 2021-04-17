@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AsyncEnumerator/4.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/AsyncEnumerable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AsyncEnumerable.dll": {}
+        }
+      },
       "ControlzEx/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -302,6 +311,27 @@
     }
   },
   "libraries": {
+    "AsyncEnumerator/4.0.2": {
+      "sha512": "mjBg9pGuQVbCeC/3t75B74mRjIIqOg6o212CJ7g37wRrPIJTGzuFKo9/TsVuJl2by2I1ESJLyFnNFHHEMRUysA==",
+      "type": "package",
+      "path": "asyncenumerator/4.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "asyncenumerator.4.0.2.nupkg.sha512",
+        "asyncenumerator.nuspec",
+        "lib/net45/AsyncEnumerable.dll",
+        "lib/net45/AsyncEnumerable.xml",
+        "lib/net461/AsyncEnumerable.dll",
+        "lib/net461/AsyncEnumerable.xml",
+        "lib/netstandard1.4/AsyncEnumerable.dll",
+        "lib/netstandard1.4/AsyncEnumerable.xml",
+        "lib/netstandard2.0/AsyncEnumerable.dll",
+        "lib/netstandard2.0/AsyncEnumerable.xml",
+        "lib/netstandard2.1/AsyncEnumerable.dll",
+        "lib/netstandard2.1/AsyncEnumerable.xml"
+      ]
+    },
     "ControlzEx/4.3.0": {
       "sha512": "I7PKmQNIMO9+s4s50WXOApotnyEKL9G8vvYrZY7CLe7nufXwRSv+vWPrd4BYwZDQiWHbBwnXsC8zUPgPnEWr6g==",
       "type": "package",
@@ -1030,6 +1060,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AsyncEnumerator >= 4.0.2",
       "DevExpressMvvm >= 20.2.3",
       "FontAwesome.WPF >= 4.7.0.9",
       "MaterialDesignThemes >= 4.0.0",
@@ -1047,11 +1078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj",
+      "projectUniqueName": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj",
       "projectName": "TrueFriendsApp",
-      "projectPath": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj",
+      "projectPath": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj",
       "packagesPath": "C:\\Users\\KriSWhitch\\.nuget\\packages\\",
-      "outputPath": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\obj\\",
+      "outputPath": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -1082,6 +1113,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "AsyncEnumerator": {
+            "target": "Package",
+            "version": "[4.0.2, )"
+          },
           "DevExpressMvvm": {
             "target": "Package",
             "version": "[20.2.3, )"

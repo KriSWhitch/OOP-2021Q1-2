@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MRZHU4DlCxqL0MpJ8Pr7KhUmRS+Q4ZrkQj3fSEPks3fl+1u+ZOJQV96/muVPKf3prugKKOaXIFo1KUMI8pfWwg==",
+  "dgSpecHash": "t4rnO6wPLP8cxX+1ppd4amvzqIETrpjk83o8Gl0Ym6V4xEExoQNGguUKBT8iD5kAan5jficyr5PXSwbd1xZvgQ==",
   "success": true,
-  "projectFilePath": "F:\\GitHub\\TrueFriends-CP\\TrueFriendsApp\\TrueFriendsApp\\TrueFriendsApp.csproj",
+  "projectFilePath": "F:\\GitHub\\OOP-2021Q1-2\\lab10\\TrueFriendsApp\\TrueFriendsApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\KriSWhitch\\.nuget\\packages\\asyncenumerator\\4.0.2\\asyncenumerator.4.0.2.nupkg.sha512",
     "C:\\Users\\KriSWhitch\\.nuget\\packages\\controlzex\\4.3.0\\controlzex.4.3.0.nupkg.sha512",
     "C:\\Users\\KriSWhitch\\.nuget\\packages\\devexpressmvvm\\20.2.3\\devexpressmvvm.20.2.3.nupkg.sha512",
     "C:\\Users\\KriSWhitch\\.nuget\\packages\\fontawesome.wpf\\4.7.0.9\\fontawesome.wpf.4.7.0.9.nupkg.sha512",

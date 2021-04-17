@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Dasync.Collections;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace TrueFriendsApp
@@ -16,7 +18,18 @@ namespace TrueFriendsApp
 
         public static SqlConnection GetDBConnection()
         {
-            if (cn_connection.State != ConnectionState.Open) cn_connection.Open();
+            if (cn_connection.State != ConnectionState.Open) {
+                try
+                {
+                    cn_connection.Open();
+                }
+                catch
+                {
+                    // возможно создание новой базы данных и подключения к ней, но вообще так делать не нужно
+                }
+            }
+
+            
 
             return cn_connection;
         }
@@ -96,10 +109,13 @@ namespace TrueFriendsApp
         public static void EditAdvert(int id, string fullName, string shortName, int animalAge, decimal animalWeight, string kindOfAnimal, string description, byte[] pictureByteArray)
         {
             cn_connection = GetDBConnection();
+            SqlTransaction sqlTransaction = null;
             try
             {
                 SqlCommand command = new SqlCommand();
+                sqlTransaction = cn_connection.BeginTransaction();
                 command.Connection = cn_connection;
+                command.Transaction = sqlTransaction;
                 command.CommandText = @"UPDATE Advert SET Advert_FullName = @Advert_FullName, Advert_ShortName = @Advert_ShortName, 
                                         Advert_AnimalAge = @Advert_AnimalAge, Advert_AnimalWeight = @Advert_AnimalWeight, Advert_KindOfAnimal = @Advert_KindOfAnimal, 
                                         Advert_Description = @Advert_Description, Advert_Image = @Advert_Image WHERE Advert_ID = @Advert_ID";
@@ -123,10 +139,26 @@ namespace TrueFriendsApp
                 command.Parameters["@Advert_Image"].Value = pictureByteArray;
 
                 command.ExecuteNonQuery();
+                if (shortName.Length < 5)
+                {
+                    MessageBox.Show("ShortName должно быть >=5 символам! Сработала транзакция");
+                    sqlTransaction.Rollback();
+                }
+                else sqlTransaction.Commit();
+
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                try
+                {
+                    sqlTransaction.Rollback();
+                    MessageBox.Show(e.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
         }
 
@@ -191,6 +223,10 @@ namespace TrueFriendsApp
                         }
                     );
                 }
+                Parallel.ForEach(adverts, el => {
+                    el.ImageSource = ImageConverter.ImageSourceFromBitmap(el.Image.Source);
+                    el.ImageSource.Freeze();
+                });
                 return adverts;
             }
             catch (Exception e)
