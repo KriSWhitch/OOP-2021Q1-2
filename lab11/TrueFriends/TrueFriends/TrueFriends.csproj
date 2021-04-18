@@ -215,6 +215,7 @@
     <Compile Include="Classes\ImageConverter.cs" />
     <Compile Include="Classes\ValidationRules.cs" />
     <Compile Include="DB\DB.cs" />
+    <Compile Include="Model\Sort.cs" />
     <Compile Include="View\MainWindow.xaml.cs" />
     <Page Include="Resources\lang.ru-RU.xaml">
       <Generator>MSBuild:Compile</Generator>

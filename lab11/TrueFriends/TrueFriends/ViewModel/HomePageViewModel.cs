@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
+using TrueFriends.Model;
 using TrueFriendsApp.Model;
 using TrueFriendsApp.View;
 
@@ -18,10 +19,13 @@ namespace TrueFriendsApp.ViewModel
         public HomePageViewModel(MainWindow mainForm)
         {
             this.mainForm = mainForm;
+            CurrentSelection = Sorts.First();
+            SortChangedClick();
         }
         
         private BindingList<Advert> adList = DB.GetAdverts();
         private Advert selectedItem;
+        private Sort currentSelection;
 
         public BindingList<Advert> AdList
         {
@@ -52,21 +56,54 @@ namespace TrueFriendsApp.ViewModel
         {
             mainForm.LoadView(ViewType.Advert, SelectedItem);
         }
-        bool fliterByShortNameFlag = false;
-        public ICommand buttonFilterAdvertsByShortName => new DelegateCommand(ButtonFilterAdvertsByShortName);
-        private void ButtonFilterAdvertsByShortName()
+
+        public List<Sort> Sorts { get; } = new List<Sort>
         {
-            if (fliterByShortNameFlag == false)
+            new Sort {SortType = "По названию"},
+            new Sort {SortType = "По возр. возраста"},
+            new Sort {SortType = "По убыв. возраста"},
+            new Sort {SortType = "По возр. веса"},
+            new Sort {SortType = "По убыв. веса"}
+        };
+        public Sort CurrentSelection
+        {
+            get
             {
-                var sortedListInstance = new BindingList<Advert>(AdList.OrderBy(x => x.Advert_ShortName).ToList());
-                AdList = sortedListInstance;
+                return currentSelection;
             }
-            else
+            set
             {
-                var sortedListInstance = new BindingList<Advert>(AdList.OrderByDescending(x => x.Advert_ShortName).ToList());
-                AdList = sortedListInstance;
+                currentSelection = value;
+                RaisePropertyChanged("CurrentSelection");
             }
-            fliterByShortNameFlag = !fliterByShortNameFlag;
+        }
+
+        public ICommand sortChangedClick => new DelegateCommand(SortChangedClick);
+        private void SortChangedClick()
+        {
+            switch (CurrentSelection.SortType)
+            {
+                case "По названию":
+                    var sortedShortNameList = new BindingList<Advert>(AdList.OrderBy(x => x.Advert_ShortName).ToList());
+                    AdList = sortedShortNameList;
+                    break;
+                case "По возр. возраста":
+                    var sortedAgeAscList = new BindingList<Advert>(AdList.OrderBy(x => x.Advert_AnimalAge).ToList());
+                    AdList = sortedAgeAscList;
+                    break;
+                case "По убыв. возраста":
+                    var sortedAgeDescList = new BindingList<Advert>(AdList.OrderByDescending(x => x.Advert_AnimalAge).ToList());
+                    AdList = sortedAgeDescList;
+                    break;
+                case "По возр. веса":
+                    var sortedWeightList = new BindingList<Advert>(AdList.OrderBy(x => x.Advert_AnimalWeight).ToList());
+                    AdList = sortedWeightList;
+                    break;
+                case "По убыв. веса":
+                    var sortedWeightDescList = new BindingList<Advert>(AdList.OrderByDescending(x => x.Advert_AnimalWeight).ToList());
+                    AdList = sortedWeightDescList;
+                    break;
+            }
         }
     }
 }
