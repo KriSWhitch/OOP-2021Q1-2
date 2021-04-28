@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8bc48794019f4322b046fad9a1635522" Name="Diagram1">
+        <EntityTypeShape EntityType="MAV_TrueFriends_CPModel.Advert" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAV_TrueFriends_CPModel.Comment" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MAV_TrueFriends_CPModel.User" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="MAV_TrueFriends_CPModel.FK__Advert__Advert_C__0519C6AF" ManuallyRouted="false" />
+        <AssociationConnector Association="MAV_TrueFriends_CPModel.FK__Comment__Comment__09DE7BCC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

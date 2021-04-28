@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MAV_TrueFriends_CPModelContainer" CdmEntityContainer="MAV_TrueFriends_CPEntities">
+    <EntitySetMapping Name="Adverts">
+      <EntityTypeMapping TypeName="MAV_TrueFriends_CPModel.Advert">
+        <MappingFragment StoreEntitySet="Advert">
+          <ScalarProperty Name="Advert_ID" ColumnName="Advert_ID" />
+          <ScalarProperty Name="Advert_Name" ColumnName="Advert_Name" />
+          <ScalarProperty Name="Advert_AnimalAge" ColumnName="Advert_AnimalAge" />
+          <ScalarProperty Name="Advert_AnimalWeight" ColumnName="Advert_AnimalWeight" />
+          <ScalarProperty Name="Advert_KindOfAnimal" ColumnName="Advert_KindOfAnimal" />
+          <ScalarProperty Name="Advert_Description" ColumnName="Advert_Description" />
+          <ScalarProperty Name="Advert_Image" ColumnName="Advert_Image" />
+          <ScalarProperty Name="Advert_Creator" ColumnName="Advert_Creator" />
+          <ScalarProperty Name="Advert_CreationDate" ColumnName="Advert_CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="MAV_TrueFriends_CPModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="Comment_ID" ColumnName="Comment_ID" />
+          <ScalarProperty Name="Comment_Text" ColumnName="Comment_Text" />
+          <ScalarProperty Name="Comment_Creator" ColumnName="Comment_Creator" />
+          <ScalarProperty Name="Comment_CreationDate" ColumnName="Comment_CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="MAV_TrueFriends_CPModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="User_Login" ColumnName="User_Login" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_IsAdmin" ColumnName="User_IsAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

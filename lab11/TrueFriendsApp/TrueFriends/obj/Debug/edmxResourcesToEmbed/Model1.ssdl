@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MAV_TrueFriends_CPModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Advert">
+    <Key>
+      <PropertyRef Name="Advert_ID" />
+    </Key>
+    <Property Name="Advert_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Advert_Name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Advert_AnimalAge" Type="int" Nullable="false" />
+    <Property Name="Advert_AnimalWeight" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Advert_KindOfAnimal" Type="varchar" MaxLength="20" />
+    <Property Name="Advert_Description" Type="varchar" MaxLength="2000" />
+    <Property Name="Advert_Image" Type="varchar(max)" />
+    <Property Name="Advert_Creator" Type="int" />
+    <Property Name="Advert_CreationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Comment_ID" />
+    </Key>
+    <Property Name="Comment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment_Text" Type="varchar" MaxLength="500" />
+    <Property Name="Comment_Creator" Type="int" />
+    <Property Name="Comment_CreationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Login" Type="varchar" MaxLength="20" />
+    <Property Name="User_Password" Type="varchar" MaxLength="256" />
+    <Property Name="User_IsAdmin" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Advert__Advert_C__0519C6AF">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Advert" Type="Self.Advert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Advert">
+        <PropertyRef Name="Advert_Creator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__Comment__09DE7BCC">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="Comment_Creator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MAV_TrueFriends_CPModelContainer">
+    <EntitySet Name="Advert" EntityType="Self.Advert" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Advert__Advert_C__0519C6AF" Association="Self.FK__Advert__Advert_C__0519C6AF">
+      <End Role="User" EntitySet="User" />
+      <End Role="Advert" EntitySet="Advert" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__Comment__09DE7BCC" Association="Self.FK__Comment__Comment__09DE7BCC">
+      <End Role="User" EntitySet="User" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
