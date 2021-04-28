@@ -8,3 +8,4 @@
 - [x] Laboratory work № 8 Resources, styles, triggers, templates
 - [x] Laboratory work № 9 Creating custom controls
 - [x] Laboratory work № 10 ADO databases
+- [x] Laboratory work № 11 Entity Framework
